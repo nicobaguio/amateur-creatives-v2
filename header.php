@@ -20,10 +20,14 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                 </span>
             </button>
         </div>
-        <div id="logo-container"><?php the_custom_logo(); ?></div>
+        <div id="logo-container">
+            <div class="logo-pads"></div>
+            <div><?php the_custom_logo(); ?></div>
+            <div class="logo-pads"></div>
+        </div>
         <div id="page-overlay">
             <?php wp_nav_menu( array (
-                'menu' => 'header',
+                'menu' => 'header-menu',
                 'container_id' => 'menu-header-container',
                 'container_class' => "menu-container",
                 'menu_id' => 'header-menu',

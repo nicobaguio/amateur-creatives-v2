@@ -120,10 +120,14 @@
 }
 
 #logo-container {
-    margin-top: -50px;
+    margin-top: -35px;
     max-height: 100px;
     z-index: 2;
     position: relative;
+}
+
+.logo-pads {
+    width: calc(50vw - 50px);
 }
 
 #page-overlay {
