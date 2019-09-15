@@ -1,5 +1,6 @@
 :root {
     --powder-violet-color: #B6C2F1;
+    font-size: 50%;
 }
 
 #body-container {
@@ -124,6 +125,7 @@
     max-height: 100px;
     z-index: 2;
     position: relative;
+    display: flex;
 }
 
 .logo-pads {
@@ -134,12 +136,12 @@
     height: 0px;
     background-color: var(--powder-violet-color);
     margin-top: -50px;
-    width: 100vw;
+    width: calc(100vw - 70px);
     z-index: 1;
     top: 150px;
     position: fixed;
     transition: height 0.15s ease-in-out 0s;
-    overflow: hidden;
+    overflow: scroll;
     padding: 0px 35px;
 }
 
@@ -153,7 +155,7 @@
     font-family: 'Realtime-Semibold';
     font-weight: normal;
     font-style: normal;
-    font-size: 40px;
+    font-size: 3em;
 }
 
 #header-menu {
@@ -162,7 +164,11 @@
 }
 
 .menu-item {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.menu-item a.disabled {
+    color: gray;
 }
 
 .menu-item a {
