@@ -33,5 +33,8 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                 'menu_id' => 'header-menu',
                 'link_after' => '.'
             ) ) ?>
+            <div id="search-form-container">
+                <?php get_search_form(); ?>
+            </div>
         </div>
     </header>

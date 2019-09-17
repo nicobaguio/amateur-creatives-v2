@@ -5,13 +5,13 @@ if ( ! function_exists( 'my_scripts' ) ) {
         // wp_enqueue_script( 'jquery-min-js', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $in_footer=true);
         wp_enqueue_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', $in_footer=true);
         wp_enqueue_script( 'ac-js', get_template_directory_uri() . '/js/amateur-creatives.js', $in_footer=true);
-        // wp_enqueue_script('fa', 'https://kit.fontawesome.com/bab6ae1df1.js', $in_footer=true);
     }
 }
 
 if ( ! function_exists( 'vendor_scripts' ) ) {
     function vendor_scripts() {
         wp_enqueue_script( 'jquery-min-js', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $in_footer=true);
+        wp_enqueue_script('fa', 'https://kit.fontawesome.com/1c6d44ea95.js', $in_footer=true);
     }
 }
 
