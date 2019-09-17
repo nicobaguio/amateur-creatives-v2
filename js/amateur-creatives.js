@@ -1,12 +1,8 @@
-$('.hamburger').on('click', function(e) {
-    $(this).toggleClass('is-active');
-    $('#page-overlay').toggleClass('reveal');
-})
+var hamburger = document.querySelector('.hamburger');
+var page_overlay = document.querySelector('#page-overlay');
 
-$('#page-overlay').on('scroll', function () {
-    $('.menu-item a').each( function( a ) {
-        a_hidden = $( this ).offset().top < 165 - $ ( this ).height();
-        $( this ).toggleClass('disabled', a_hidden);
-    })
-
+hamburger.addEventListener('click', function() {
+    console.log('Clicking event...')
+    hamburger.classList.toggle('is-active');
+    page_overlay.classList.toggle('reveal');
 })
