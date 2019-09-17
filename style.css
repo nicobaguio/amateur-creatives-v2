@@ -21,6 +21,12 @@ Developed by Nico Baguio.
     margin: 0;
 }
 
+#header-container {
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
 .hamburger {
 	padding: 15px 15px;
 	display: inline-block;
@@ -154,7 +160,7 @@ Developed by Nico Baguio.
 	font-family: 'Realtime-Semibold';
 	border: 0;
     font-size: 2em;
-    width: calc(100vw - 70px);
+    width: calc(100vw - 81px);
     padding-left: 10px;
 }
 

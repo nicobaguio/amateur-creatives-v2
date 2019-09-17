@@ -1,11 +1,16 @@
-#header-container {
+#header-container.small {
 	background-color: var(--powder-violet-color);
 	min-width: 200px;
 	max-width: 300px;
-    width: 15vw;
-    position: absolute;
-    top: 0;
-    left: 0;
+	width: 15vw;
+	height: auto;
+
+}
+
+#header-container {
+    background-color: var(--powder-violet-color);
+    height: 100vh;
+	width: 25vw;
 }
 
 #top-header-container {
@@ -47,8 +52,7 @@
 
 #search-text {
 	font-size: 10px;
-	width: calc(15vw - 40px);
-	min-width: 160px;
-	max-width: 260px;
+	min-width: calc(15vw - 51px);
+	max-width: 249px;
 	height: 25px;
 }
