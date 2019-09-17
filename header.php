@@ -14,7 +14,7 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
 <body id="body-container">
     <header id="header-container">
         <div id="top-header-container">
-            <button class="hamburger hamburger--elastic" type="button">
+            <button class="hamburger hamburger--elastic is-active" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
