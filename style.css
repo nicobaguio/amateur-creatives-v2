@@ -147,11 +147,10 @@
 #page-overlay {
     height: 0px;
     background-color: var(--powder-violet-color);
-    margin-top: -50px;
     width: calc(100vw - 70px);
     z-index: 1;
-    top: 150px;
-    position: fixed;
+    top: 100px;
+    position: absolute;
     transition: height 0.15s ease-in-out 0s;
     overflow: scroll;
     padding: 0px 35px;
