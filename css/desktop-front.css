@@ -11,6 +11,7 @@
     background-color: var(--powder-violet-color);
     height: 100vh;
 	width: 25vw;
+	position: fixed;
 }
 
 #top-header-container {
@@ -35,7 +36,7 @@
 	z-index: 9999;
 }
 
-#menu-header-container {
+#header-container.small #menu-header-container {
     margin-top: 10px;
     font-size: 2em;
 }
@@ -58,4 +59,21 @@
 #search-text {
 	font-size: 10px;
 	height: 25px;
+}
+
+#menu-header-container {
+	font-size: 4em;
+}
+
+#header-container.small .menu-item {
+	display: list-item;
+}
+
+.menu-item {
+	display: inline;
+	margin-right: -10px;
+}
+
+.menu-item:after {
+	width: 0px;
 }
