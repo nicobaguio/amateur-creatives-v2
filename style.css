@@ -195,3 +195,7 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 	border: 0;
     background: white;
 }
+
+#newsletter-container {
+    display: none;
+}

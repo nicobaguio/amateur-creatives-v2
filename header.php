@@ -36,4 +36,7 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                 <?php get_search_form(); ?>
             </div>
         </div>
+        <div id="newsletter-container">
+            <?php dynamic_sidebar('newsletter-header') ?>
+        </div>
     </header>

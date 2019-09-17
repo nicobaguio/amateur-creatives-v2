@@ -32,7 +32,22 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		)
 	);
 }}
+// Register Sidebars
 
+if (function_exists('register_sidebar') ) {
+    function ac_header_widgets() {
+        register_sidebar(array(
+            'name' => 'Newsletter Header',
+            'id' => 'newsletter-header',
+            'description' => 'Newsletter block in header of homepage',
+            'before_widget' => '<div id="newsletter-widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h1>',
+            'after_title' => '</h1>',
+        ));
+}}
+
+// Add ACF fields
 if ( function_exists('acf_add_local_field_group') ) {
 
     acf_add_local_field_group(array(
@@ -215,7 +230,8 @@ if ( function_exists('acf_add_local_field_group') ) {
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
-        add_action( 'init', 'ac_nav_menus' );
+        add_action('init','ac_nav_menus' );
+        add_action('widgets_init','ac_header_widgets');
         add_action('wp_footer','vendor_scripts');
         add_action('wp_footer','my_scripts');
         add_action('wp_footer','my_styles');

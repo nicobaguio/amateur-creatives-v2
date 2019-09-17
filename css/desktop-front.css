@@ -10,7 +10,7 @@
 #header-container {
     background-color: var(--powder-violet-color);
     height: 100vh;
-	width: 25vw;
+	width: 30vw;
 	position: fixed;
 }
 
@@ -63,6 +63,7 @@
 
 #menu-header-container {
 	font-size: 4em;
+	margin-top: 50px;
 }
 
 #header-container.small .menu-item {
@@ -74,6 +75,12 @@
 	margin-right: -10px;
 }
 
-.menu-item:after {
-	width: 0px;
+#newsletter-container {
+	display: block;
+	margin: 10px 20px;
+	border: 2px dotted black;
+}
+
+.small #newsletter-container {
+	display: none;
 }
