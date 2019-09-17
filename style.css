@@ -154,14 +154,16 @@ Developed by Nico Baguio.
 
 #searchform {
     display: flex;
+    width: calc(100vw - 70px);
+    max-width: 100%;
 }
 
 #search-text {
 	font-family: 'Realtime-Semibold';
 	border: 0;
     font-size: 2em;
-    width: calc(100vw - 81px);
     padding-left: 10px;
+    flex: 1 1 auto;
 }
 
 input#search-text::-webkit-input-placeholder {
@@ -191,7 +193,5 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 
 #search-button {
 	border: 0;
-	background: white;
-	position: relative;
-	right: 31px;
+    background: white;
 }

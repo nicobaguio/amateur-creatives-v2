@@ -50,9 +50,12 @@
     width: 100%;
 }
 
+#searchform {
+	width: 100%;
+	max-width: 250px;
+}
+
 #search-text {
 	font-size: 10px;
-	min-width: calc(15vw - 51px);
-	max-width: 249px;
 	height: 25px;
 }

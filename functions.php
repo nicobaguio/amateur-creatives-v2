@@ -9,7 +9,7 @@ if ( ! function_exists( 'my_scripts' ) ) {
 
 if ( ! function_exists( 'vendor_scripts' ) ) {
     function vendor_scripts() {
-        wp_enqueue_script('fa', 'https://kit.fontawesome.com/1c6d44ea95.js', $in_footer=true);
+        // wp_enqueue_script('fa', 'https://kit.fontawesome.com/1c6d44ea95.js', $in_footer=true);
     }
 }
 
