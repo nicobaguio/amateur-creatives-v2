@@ -114,3 +114,78 @@ Developed by Nico Baguio.
     transform: translate3d(0, -16px, 0) rotate(-270deg);
     transition-delay: 0.075s;
 }
+
+#menu-header-container {
+    margin-top: 75px;
+    font-family: 'Realtime-Semibold';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3em;
+}
+
+#header-menu {
+    list-style: none;
+    padding: 0px;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.menu-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item a.disabled {
+    color: gray;
+}
+
+#page-overlay #menu-header-container #header-menu .menu-item a:hover {
+    color: black!important;
+    box-shadow: 0 -10px 0 0 #FEEB52 inset!important;
+}
+
+#searchform {
+    display: flex;
+}
+
+#search-text {
+	font-family: 'Realtime-Semibold';
+	border: 0;
+    font-size: 2em;
+    width: calc(100vw - 70px);
+    padding-left: 10px;
+}
+
+input#search-text::-webkit-input-placeholder {
+    vertical-align: text-bottom;
+}
+
+input#search-text::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    vertical-align: text-bottom;
+}
+
+input#search-text::-moz-placeholder { /* Firefox 19+ */
+    vertical-align: text-bottom;
+}
+
+input#search-text:-ms-input-placeholder { /* IE 10+ */
+    vertical-align: text-bottom;
+}
+
+input#search-text:-moz-placeholder { /* Firefox 18- */
+    color: red;
+}
+
+.fas {
+    height: 15px;
+    width: 15px;
+}
+
+#search-button {
+	border: 0;
+	background: white;
+	position: relative;
+	right: 31px;
+}
