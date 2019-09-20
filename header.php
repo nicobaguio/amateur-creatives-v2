@@ -39,4 +39,7 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
         <div id="newsletter-container">
             <?php dynamic_sidebar('newsletter-header') ?>
         </div>
+        <div id="header-hero-container">
+            <?php dynamic_sidebar('hero-header') ?>
+        </div>
     </header>

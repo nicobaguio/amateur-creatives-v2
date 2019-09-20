@@ -45,6 +45,14 @@ if (function_exists('register_sidebar') ) {
             'before_title' => '<h1>',
             'after_title' => '</h1>',
         ));
+
+        register_sidebar(array(
+            'name' => 'Hero Header',
+            'id' => 'hero-header',
+            'description' => 'Hero Header image',
+            'before_widget' => '<div class="hero-header-widget">',
+            'after_widget' => '</div>',
+        ));
 }}
 
 // Add ACF fields
