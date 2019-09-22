@@ -205,7 +205,7 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 #header-hero-container {
 	max-width: 576px;
 	max-height: 324px;
-	display: flex;
+	display: none;
     align-items: center;
     margin-top: 15px;
 }
