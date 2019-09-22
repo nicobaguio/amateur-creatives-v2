@@ -24,7 +24,6 @@ Developed by Nico Baguio.
 }
 
 #header-container {
-    position: absolute;
     top: 0;
     left:0;
 }
@@ -37,8 +36,9 @@ Developed by Nico Baguio.
 	transition-duration: 0.15s;
 	transition-timing-function: linear;
 	text-transform: none;
-	background-color: transparent;
+	background-color: var(--powder-violet-color);
 	border: 0;
+    position: fixed;
 	margin: 20px 0px;
 }
 
