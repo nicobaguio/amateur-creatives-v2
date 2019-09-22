@@ -17,6 +17,18 @@
     background-color: var(--powder-violet-color);
 }
 
+#top-container {
+    transition: all 0.15s ease-in-out 0s;
+}
+
+#top-container.reveal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: all 0.15s ease-in-out 0s;
+}
+
 #logo-container {
     margin-top: -35px;
     max-height: 100px;
@@ -42,6 +54,7 @@
 }
 
 #page-overlay.reveal {
+    position: fixed;
     height: calc(100vh - 100px);
     transition: height 0.15s ease-in-out 0s;
 }
