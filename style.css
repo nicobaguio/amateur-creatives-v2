@@ -20,6 +20,7 @@ Developed by Nico Baguio.
     min-height: 100vh;
     width: 100%;
     margin: 0;
+    background-color: #F4F4F4;
 }
 
 #header-container {
@@ -199,4 +200,30 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 
 #newsletter-container {
     display: none;
+}
+
+#header-hero-container {
+	max-width: 576px;
+	max-height: 324px;
+	display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+
+.hero-header-widget {
+	/* margin: auto; */
+	font-family: 'Realtime-Semibold';
+	font-size: 24px;
+	flex: 1;
+}
+
+#header-hero-container .hero-header-widget:last-child {
+    margin-left: 15px;
+}
+
+
+.highlighted {
+    box-shadow: 0 -10px 0 0 #FEEB52 inset!important;
 }

@@ -79,3 +79,16 @@ footer {
     height: 38px;
     font-size: 2em;
 }
+
+#header-hero-container {
+    flex-direction: row-reverse;
+}
+
+#typed-container {
+    margin-right: -55px;
+}
+
+.subtitle {
+    font-family: 'PMNCaecilia', sans-serif;
+    font-size: 12px;
+}

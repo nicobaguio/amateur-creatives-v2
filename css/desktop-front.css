@@ -12,6 +12,29 @@
     height: 100vh;
 	width: 30vw;
 	position: fixed;
+	max-width: 576px;
+	max-height: 1080px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+}
+
+@media (min-width: 1920px) {
+	#header-container {
+		margin-left: calc(50vw - 960px);
+	}
+}
+
+#top-container {
+	height: 150px;
+}
+
+#middle-container {
+	flex: 2 1 auto;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	max-height: calc(70vh - 150px);
 }
 
 #top-header-container {
@@ -19,12 +42,6 @@
     max-width: 40%;
     max-height: 75px;
 }
-
-/* #logo-container {
-	position: absolute;
-	right: 15px;
-	top: 20px;
-} */
 
 .custom-logo {
 	display: block;
@@ -56,14 +73,24 @@
 	max-width: 250px;
 }
 
-#search-text {
+.small #search-text {
 	font-size: 10px;
-	height: 25px;
+}
+
+#search-text {
+	font-size: 2em;
+	height: 30px;
 }
 
 #menu-header-container {
-	font-size: 4em;
-	margin-top: 50px;
+	font-size: 3em;
+	margin-top: 0px;
+}
+
+@media (min-width: 1920px) {
+	#menu-header-container {
+		font-size: 45px;
+	}
 }
 
 #header-container.small .menu-item {
@@ -72,15 +99,69 @@
 
 .menu-item {
 	display: inline;
-	margin-right: -10px;
+	/* margin-right: -10px; */
 }
 
 #newsletter-container {
 	display: block;
-	margin: 10px 20px;
-	border: 2px dotted black;
+	margin: 0px 10px 10px;
+	font-family: 'PMNCaecilia', sans-serif;
+	font-size: 10px;
 }
 
-.small #newsletter-container {
+#newsletter-container > div {
+	border: 2px dotted black;
+	padding: 10px;
+}
+
+#newsletter-container input {
+	border: 1px var(--pastel-pink-color) solid;
+    font-family: 'Realtime-Semibold';
+    height: 25px;
+    padding-left: 10px;
+}
+
+.mc4wp-form-fields {
+	text-align: center;
+}
+
+#newsletter-widget {
+	background-color: #fff;
+}
+
+#newsletter-widget h1 {
+	text-align: center;
+}
+
+.privacypolicy {
+	display: flex;
+	text-align: left;
+}
+
+.small #newsletter-container, .small #header-hero-container {
+	display: none;
+}
+
+#header-hero-container {
+	background-color: var(--pastel-pink-color);
+	margin-top: 0px;
+}
+
+.hero-header-widget {
+	padding: 15px;
+}
+
+@media (min-width: 1920px) {
+	.hero-header-widget {
+		font-size: 35px;
+	}
+}
+
+.widget_text {
+	max-width: 50%;
+	flex: 2;
+}
+
+.subtitle {
 	display: none;
 }
