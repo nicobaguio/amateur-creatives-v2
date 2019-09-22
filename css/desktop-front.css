@@ -144,6 +144,7 @@
 
 #header-hero-container {
 	background-color: var(--pastel-pink-color);
+	display: flex;
 	margin-top: 0px;
 }
 
