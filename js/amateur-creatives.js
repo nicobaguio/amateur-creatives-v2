@@ -4,7 +4,7 @@ var header_container = document.querySelector('#header-container');
 var header_links = document.querySelectorAll('.menu-item a');
 
 var DesktopTransform = function() {
-    isDesktop = window.matchMedia("(min-width: 1280px)")
+    isDesktop = window.matchMedia("(min-width: 1080px)")
 
     if ( !isDesktop.matches ) {
         // console.log('This is a desktop...');
