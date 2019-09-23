@@ -38,6 +38,7 @@ Developed by Nico Baguio.
 	text-transform: none;
 	background-color: var(--powder-violet-color);
 	border: 0;
+    z-index: 1;
     position: fixed;
 	margin: 20px 0px;
 }
