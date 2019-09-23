@@ -1,5 +1,6 @@
 var hamburger = document.querySelector('.hamburger');
 var page_overlay = document.querySelector('#page-overlay');
+var top_container = document.querySelector('#top-container');
 var header_container = document.querySelector('#header-container');
 var header_links = document.querySelectorAll('.menu-item a');
 
@@ -25,6 +26,7 @@ hamburger.addEventListener('click', function() {
         header_container.classList.toggle('small');
     } else {
         page_overlay.classList.toggle('reveal');
+        top_container.classList.toggle('reveal');
     }
 })
 
