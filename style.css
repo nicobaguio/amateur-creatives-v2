@@ -24,6 +24,7 @@ a {
 
 #body-container {
     min-height: 100vh;
+    max-width: 100vw;
     width: 100%;
     margin: 0;
     background-color: #F4F4F4;
