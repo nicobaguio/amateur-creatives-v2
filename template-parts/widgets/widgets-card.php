@@ -11,8 +11,11 @@
             <img src="<?php echo $thumb ?>" class="card-thumbnail">
             <img class="category-icon" src="<?php echo $image_data[0] ?>">
         </div>
-        <h1 class="card-title">
-            <?php the_title(); ?>
-        </h1>
+        <div>
+            <h1 class="card-title">
+                <?php the_title(); ?>
+            </h1>
+        </div>
+
     </a>
 </div>

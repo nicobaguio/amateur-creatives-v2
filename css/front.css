@@ -96,6 +96,7 @@ footer {
 #header-hero-container {
     display: flex;
     flex-direction: row-reverse;
+    margin-bottom: 20px;
 }
 
 #typed-container {
