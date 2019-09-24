@@ -110,3 +110,7 @@ footer {
     font-family: 'PMNCaecilia', sans-serif;
     font-size: 12px;
 }
+
+.circle {
+    r: 40px;
+}
