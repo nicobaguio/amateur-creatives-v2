@@ -146,6 +146,8 @@
 	background-color: var(--salmon);
 	display: flex;
 	margin-top: 0px;
+	max-width: 576px;
+	max-height: 324px;
 }
 
 .hero-header-widget {
