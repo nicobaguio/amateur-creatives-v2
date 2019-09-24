@@ -254,6 +254,9 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 
 #blogpost-header-img {
     width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: auto;
     height: auto;
 }
 
