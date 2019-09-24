@@ -14,7 +14,7 @@
 #top-header-container {
     width: 100%;
     height: 100px;
-    background-color: var(--powder-violet-color);
+    background-color: var(--lilac-fog);
 }
 
 #top-container {
@@ -43,7 +43,7 @@
 
 #page-overlay {
     height: 0px;
-    background-color: var(--powder-violet-color);
+    background-color: var(--lilac-fog);
     width: calc(100vw - 70px);
     z-index: 1;
     top: 100px;

@@ -13,8 +13,9 @@ Developed by Nico Baguio.
 @import 'css/cards.css';
 
 :root {
-    --powder-violet-color: #B6C2F1;
-    --pastel-pink-color: #FACAC0;
+    --lilac-fog: #B6C2F1;
+    --salmon: #FACAC0;
+    --egg-yolk: #FEEB52;
     font-size: 50%;
 }
 
@@ -38,7 +39,7 @@ Developed by Nico Baguio.
 	transition-duration: 0.15s;
 	transition-timing-function: linear;
 	text-transform: none;
-	background-color: var(--powder-violet-color);
+	background-color: var(--lilac-fog);
 	border: 0;
     z-index: 1;
     position: fixed;
@@ -154,7 +155,7 @@ Developed by Nico Baguio.
 
 #page-overlay #menu-header-container #header-menu .menu-item a:hover {
     color: black!important;
-    box-shadow: 0 -10px 0 0 #FEEB52 inset!important;
+    box-shadow: 0 -10px 0 0 var(--egg-yolk) inset!important;
 }
 
 #searchform {
@@ -228,7 +229,7 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 
 
 .highlighted {
-    box-shadow: 0 -10px 0 0 #FEEB52 inset!important;
+    box-shadow: 0 -10px 0 0 var(--egg-yolk) inset!important;
 }
 
 #latest-blogposts-container {
