@@ -15,6 +15,7 @@ Developed by Nico Baguio.
     --salmon: #FACAC0;
     --egg-yolk: #FEEB52;
     --vogue-red: #CE4D52;
+    --seafoam: #94C7C2;
     font-size: 50%;
 }
 
@@ -260,6 +261,39 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 #video-reel-container {
     max-width: 100%;
     overflow: auto;
+}
+
+#card-link-container {
+    max-width: 100%;
+    display: flex;
+}
+
+.card-link {
+    flex: 1 0 33%;
+    font-family: 'Realtime-Semibold';
+    text-align: center;
+    font-size: 20px;
+}
+
+#shop-card-link {
+    background-color: var(--salmon);
+}
+
+#blogs-card-link {
+    background-color: var(--egg-yolk);
+}
+
+#courses-card-link {
+    background-color: var(--seafoam);
+}
+
+.circle-container {
+    width: 100%;
+}
+
+.circle {
+    stroke: #707070;
+    fill: white;
 }
 
 #footer {
