@@ -5,11 +5,11 @@ if ( ! function_exists( 'my_scripts' ) ) {
         wp_enqueue_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', $in_footer=true);
         wp_enqueue_script( 'ac-js', get_template_directory_uri() . '/js/amateur-creatives.js', $in_footer=true);
         if (is_front_page() or is_page('home')) {
-        wp_enqueue_script( 'custom-typed-js', get_template_directory_uri() . '/js/typed-custom.js', $in_footer=true);
-        wp_enqueue_script( 'custom-flkty-js', get_template_directory_uri() . '/js/flickity-custom.js', $in_footer=true);
+            wp_enqueue_script( 'custom-typed-js', get_template_directory_uri() . '/js/typed-custom.js', $in_footer=true);
+            wp_enqueue_script( 'custom-flkty-js', get_template_directory_uri() . '/js/flickity-custom.js', $in_footer=true);
         };
-        }
     }
+}
 
 if ( ! function_exists( 'vendor_scripts' ) ) {
     function vendor_scripts() {
@@ -27,7 +27,8 @@ if ( ! function_exists( 'my_styles' ) ) {
         wp_enqueue_style( 'desktop-front', get_template_directory_uri() . '/css/desktop-front.css', array(), null, '(min-width: 1024px)');
         if ( is_front_page() or is_page('home') ) {
             wp_enqueue_style( 'cards', get_template_directory_uri() . '/css/cards.css' );
-    };    
+            wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/video-reel.css' );
+        };
     };    
 }
 
@@ -118,7 +119,7 @@ if( function_exists('acf_add_local_field_group') ) {
         'active' => true,
         'description' => '',
     ));
-    
+
     acf_add_local_field_group(array(
         'key' => 'group_5bae00554062c',
         'title' => 'Homepage Custom Fields',
@@ -186,8 +187,8 @@ if( function_exists('acf_add_local_field_group') ) {
                     'operator' => '==',
                     'value' => '70',
                 ),
-                ),
             ),
+        ),
         'menu_order' => 0,
         'position' => 'side',
         'style' => 'seamless',
@@ -225,8 +226,8 @@ if( function_exists('acf_add_local_field_group') ) {
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'post',
-            ),
-            array(
+                ),
+                array(
                     'param' => 'post_taxonomy',
                     'operator' => '==',
                     'value' => 'post_tag:video',
