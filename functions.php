@@ -23,14 +23,14 @@ if ( ! function_exists( 'vendor_scripts' ) ) {
 if ( ! function_exists( 'my_styles' ) ) {
     function my_styles() {
         wp_enqueue_style( 'style', get_stylesheet_uri());
-        wp_enqueue_style( 'front', get_template_directory_uri() . '/css/front.css', array(), null, '(max-width: 1079.99px)');
-        wp_enqueue_style( 'desktop-front', get_template_directory_uri() . '/css/desktop-front.css', array(), null, '(min-width: 1080px)');
+        wp_enqueue_style( 'front', get_template_directory_uri() . '/css/front.css', array(), null, '(max-width: 1023px)');
+        wp_enqueue_style( 'desktop-front', get_template_directory_uri() . '/css/desktop-front.css', array(), null, '(min-width: 1024px)');
     };    
 }
 
 if ( ! function_exists( 'vendor_styles' ) ) {
     function vendor_styles() {
-        wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), null, '(max-width: 1079.99px)');
+        wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), null, '(max-width: 1023px)');
     }
 }
 
