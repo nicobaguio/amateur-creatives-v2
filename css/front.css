@@ -18,20 +18,20 @@
 }
 
 #top-container {
-    transition: all 0.15s ease-in-out 0s;
+    transition: top 2s ease-in-out 0s;
 }
 
-#top-container.reveal {
+.reveal #top-container {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 3;
-    transition: all 0.15s ease-in-out 0s;
+    transition: top 0.275s ease-in-out 0s;
 }
 
 #logo-container {
     margin-top: -35px;
-    max-height: 100px;
+    height: 100px;
     z-index: 2;
     position: relative;
     display: flex;
@@ -41,22 +41,33 @@
     width: calc(50vw - 50px);
 }
 
+#top-blank-space {
+    height: 165px;
+    width: 100vw;
+    display: none;
+}
+
+.reveal #top-blank-space {
+    display: block;
+}
+
 #page-overlay {
     height: 0px;
     background-color: var(--lilac-fog);
     width: calc(100vw - 70px);
     z-index: 1;
     top: 100px;
+    left: 0px;
     position: absolute;
-    transition: height 0.15s ease-in-out 0s;
+    transition: height 0.275s ease-in-out 0s;
     overflow: scroll;
     padding: 0px 35px;
 }
 
-#page-overlay.reveal {
+.reveal #page-overlay {
     position: fixed;
     height: calc(100vh - 100px);
-    transition: height 0.15s ease-in-out 0s;
+    transition: height 0.275s ease-in-out 0s;
 }
 
 footer {
