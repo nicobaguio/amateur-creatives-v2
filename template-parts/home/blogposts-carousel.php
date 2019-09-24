@@ -1,8 +1,8 @@
 <?php $latest_blogposts_img = get_field('latest_blogposts_img') ?>
 <div id="latest-blogposts-container">
-    <?php echo wp_get_attachment_image($latest_blogposts_img, null, false, array('id' => 'blogpost-header-img')) ?>
+    <?php echo wp_get_attachment_image($latest_blogposts_img, null, false, array('id' => 'container-header-img')) ?>
     <div class="main-carousel">
-        <?php $the_query = new WP_Query( array( 'posts_per_page' => 3 )) ?>
+        <?php $the_query = new WP_Query( array( 'posts_per_page' => 4 )) ?>
         <?php if ( $the_query->have_posts() ): ?>
             <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <?php get_template_part('template-parts/widgets/widgets', 'card') ?>
