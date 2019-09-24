@@ -32,6 +32,10 @@ a {
     background-color: #F4F4F4;
 }
 
+#body-container.disabled-scroll {
+    overflow: hidden;
+}
+
 #header-container {
     top: 0;
     left:0;
