@@ -20,10 +20,10 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                     </span>
                 </button>
             </div>
-            <div id="logo-container">
-                <div class="logo-pads"></div>
-                <div><?php the_custom_logo(); ?></div>
-                <div class="logo-pads"></div>
+            <div id="logo-header-container">
+                <!-- <div class="logo-pads"></div> -->
+                <div class="logo"><?php the_custom_logo(); ?></div>
+                <!-- <div class="logo-pads"></div> -->
             </div>
         </div>
         <div id="top-blank-space"></div>

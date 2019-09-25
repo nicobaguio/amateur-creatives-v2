@@ -43,6 +43,10 @@
     max-height: 75px;
 }
 
+#logo-header-container {
+	margin-top: 70px;
+}
+
 .custom-logo {
 	display: block;
 	margin-left: auto;
@@ -106,7 +110,7 @@
 	display: block;
 }
 
-.small #newsletter-container, .small #header-hero-container {
+.small #newsletter-header-container, .small #header-hero-container {
 	display: none;
 }
 

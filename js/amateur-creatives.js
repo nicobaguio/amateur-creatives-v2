@@ -2,6 +2,7 @@ var hamburger = document.querySelector('.hamburger');
 var page_overlay = document.querySelector('#page-overlay');
 var header_container = document.querySelector('#header-container');
 var header_links = document.querySelectorAll('.menu-item a');
+var social_icons = document.querySelectorAll('.social-icon')
 
 var DesktopTransform = function() {
     isDesktop = window.matchMedia("(min-width: 1024px)")
@@ -40,3 +41,18 @@ page_overlay.addEventListener('scroll', function() {
         a.classList.toggle('disabled', shouldBeHidden);
     })
 });
+
+// for ( var i = 0; i < social_icons.length ; i++ ) {
+//     social_icons[i].addEventListener('mouseover', function() {
+//         console.log('Hovered on: ' + i)
+//     })    
+// }
+
+function hovered() {
+    this.classList.toggle('hovered')
+}
+
+social_icons.forEach(function(icon) {
+    icon.addEventListener('mouseenter', hovered);
+    icon.addEventListener('mouseleave', hovered);
+})
