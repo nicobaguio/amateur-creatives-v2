@@ -291,13 +291,12 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     background-color: var(--seafoam);
 }
 
-.circle-container {
-    width: 100%;
+.card-link p {
+    margin: 0px auto 45px;
 }
 
-.circle {
-    stroke: #707070;
-    fill: white;
+.card-link img {
+    margin: 45px auto 0px;
 }
 
 #footer {
