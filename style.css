@@ -337,7 +337,50 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     margin: 45px auto 0px;
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
+#prefooter-container {
+    background-color: var(--salmon);
+}
+
+#social-media-container {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    background-color: white;
+    margin: 10px 5px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    margin: 8.5px;
+}
+
+.social-icon.hovered path {
+    fill: white;
+}
+
+.social-icon.instagram:hover {
+    background-color: #c13584;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.social-icon.twitter:hover {
+    background-color: #1da1f2;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.social-icon.patreon:hover {
+    background-color: #F96854;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.social-icon.youtube:hover {
+    background-color: #ff0000;
+    transition: background-color 0.1s ease-in-out;
 }
