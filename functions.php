@@ -49,12 +49,12 @@ if ( function_exists( 'register_nav_menus' ) ) {
 // Register Sidebars
 
 if (function_exists('register_sidebar') ) {
-    function ac_header_widgets() {
+    function ac_widgets() {
         register_sidebar(array(
             'name' => 'Newsletter Header',
             'id' => 'newsletter-header',
             'description' => 'Newsletter block in header of homepage',
-            'before_widget' => '<div id="newsletter-widget">',
+            'before_widget' => '<div class="newsletter-widget">',
             'after_widget' => '</div>',
             'before_title' => '<h1>',
             'after_title' => '</h1>',
@@ -67,6 +67,17 @@ if (function_exists('register_sidebar') ) {
             'before_widget' => '<div class="hero-header-widget">',
             'after_widget' => '</div>',
         ));
+
+        register_sidebar(array(
+            'name' => 'Newsletter Footer',
+            'id' => 'newsletter-footer',
+            'description' => 'Newsletter block in footer of homepage',
+            'before_widget' => '<div class="newsletter-widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h1>',
+            'after_title' => '</h1>',
+        ));
+
 }}
 
 // Add ACF fields
@@ -172,6 +183,102 @@ if( function_exists('acf_add_local_field_group') ) {
                 'max_size' => '',
                 'mime_types' => '',
             ),
+            array(
+                'key' => 'field_5d8ace26362a8',
+                'label' => 'Newsletter Image',
+                'name' => 'newsletter_img',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_5d8abd0516fce',
+                'label' => 'Shop Icon',
+                'name' => 'shop_icon',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => 50,
+                'min_height' => 50,
+                'min_size' => '',
+                'max_width' => 200,
+                'max_height' => 200,
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_5d8abd5d16fd0',
+                'label' => 'Blog Icon',
+                'name' => 'blog_icon',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => 50,
+                'min_height' => 50,
+                'min_size' => '',
+                'max_width' => 200,
+                'max_height' => 200,
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_5d8abd6a16fd1',
+                'label' => 'Courses Icon',
+                'name' => 'courses_icon',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => 50,
+                'min_height' => 50,
+                'min_size' => '',
+                'max_width' => 200,
+                'max_height' => 200,
+                'max_size' => '',
+                'mime_types' => '',
+            ),
         ),
         'location' => array(
             array(
@@ -251,7 +358,7 @@ if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
         add_theme_support( 'post-thumbnails' );
         add_action('init','ac_nav_menus' );
-        add_action('widgets_init','ac_header_widgets');
+        add_action('widgets_init','ac_widgets');
         add_action('wp_footer','vendor_scripts');
         add_action('wp_footer','vendor_styles');
         add_action('wp_footer','my_scripts');

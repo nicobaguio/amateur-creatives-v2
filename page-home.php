@@ -26,4 +26,5 @@
         </a>
     </div>
 </div>
+<?php get_template_part( 'template-parts/home/home', 'newsletter' ); ?>
 <?php get_footer(); ?>
