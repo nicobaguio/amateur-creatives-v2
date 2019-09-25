@@ -384,3 +384,31 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     background-color: #ff0000;
     transition: background-color 0.1s ease-in-out;
 }
+
+#actual-footer-container {
+    background-color: black;
+    text-align: center;
+    font-family: 'Realtime-Semibold';
+    padding: 0px 10px;
+    font-size: 12px;
+}
+
+#actual-footer-container p {
+    margin: 0px;
+    display: inline;
+    color: white;
+}
+
+#actual-footer-container a {
+    color: white;
+    border-bottom: 2px var(--egg-yolk) solid;
+}
+
+#pages-container {
+    padding-top: 10px;
+}
+
+#actual-heroes {
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
