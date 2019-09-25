@@ -102,40 +102,8 @@
 	/* margin-right: -10px; */
 }
 
-#newsletter-container {
+#newsletter-header-container {
 	display: block;
-	margin: 0px 10px 10px;
-	font-family: 'PMNCaecilia', sans-serif;
-	font-size: 10px;
-}
-
-#newsletter-container > div {
-	border: 2px dotted black;
-	padding: 10px;
-}
-
-#newsletter-container input {
-	border: 1px var(--salmon) solid;
-    font-family: 'Realtime-Semibold';
-    height: 25px;
-    padding-left: 10px;
-}
-
-.mc4wp-form-fields {
-	text-align: center;
-}
-
-#newsletter-widget {
-	background-color: #fff;
-}
-
-#newsletter-widget h1 {
-	text-align: center;
-}
-
-.privacypolicy {
-	display: flex;
-	text-align: left;
 }
 
 .small #newsletter-container, .small #header-hero-container {

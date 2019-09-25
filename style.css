@@ -212,8 +212,43 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     background: white;
 }
 
-#newsletter-container {
+#newsletter-header-container {
     display: none;
+}
+
+.newsletter {
+    margin: 0px 10px 10px;
+	font-family: 'PMNCaecilia', sans-serif;
+	font-size: 10px;
+}
+
+.newsletter > div {
+	border: 2px dotted black;
+	padding: 10px;
+}
+
+.newsletter input {
+	border: 1px var(--salmon) solid;
+    font-family: 'Realtime-Semibold';
+    height: 25px;
+    padding-left: 10px;
+}
+
+.mc4wp-form-fields {
+	text-align: center;
+}
+
+.newsletter-widget {
+	background-color: #fff;
+}
+
+.newsletter-widget h1 {
+	text-align: center;
+}
+
+.privacypolicy {
+	display: flex;
+	text-align: left;
 }
 
 #header-hero-container {
