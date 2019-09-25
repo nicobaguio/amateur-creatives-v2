@@ -238,6 +238,11 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 	text-align: center;
 }
 
+#newsletter-footer-container .newsletter-widget {
+    max-width: 400px;
+    margin: auto;
+}
+
 .newsletter-widget {
 	background-color: #fff;
 }
@@ -256,8 +261,6 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     align-items: center;
     margin-top: 15px;
 }
-
-
 
 .hero-header-widget {
 	/* margin: auto; */
