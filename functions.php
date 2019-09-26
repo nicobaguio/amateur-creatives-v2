@@ -79,6 +79,14 @@ if (function_exists('register_sidebar') ) {
             'after_title' => '</h1>',
         ));
 
+        register_sidebar(array(
+            'name' => 'Footer Instagram Image',
+            'id' => 'footer-instagram-image',
+            'description' => 'Instagram Header in Footer',
+            'before_widget' => '<div class="container-header-img">',
+            'after_widget' => '</div>',
+        ));
+
 }}
 
 // Add ACF fields
