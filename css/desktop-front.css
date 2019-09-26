@@ -158,6 +158,18 @@
 	display: none;
 }
 
+.card-link.title {
+    margin: 0px auto;
+    font-size: 40px;
+}
+
+.card-link.subtitle {
+	display: inline-block;
+	padding: 0px 20%;
+	font-size: 16px;
+	margin-bottom: 45px;
+}
+
 .small #latest-blogposts-container {
 	margin-left: auto;
 }
