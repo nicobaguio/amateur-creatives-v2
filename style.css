@@ -241,6 +241,22 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     padding-left: 10px;
 }
 
+.newsletter input[type="submit"] {
+    background-size: 300% auto;
+    background-position: 100%;
+    transition: background-position 0.5s;
+    height: 29px;
+    background-image: linear-gradient(to left, white 0%, white 40%, var(--salmon) 50%);
+}
+
+.newsletter input[type="checkbox"] {
+    margin-top: -7px;
+}
+
+.newsletter input[type="submit"]:hover {
+    background-position: 0%;
+}
+
 .mc4wp-form-fields {
 	text-align: center;
 }

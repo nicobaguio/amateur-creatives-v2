@@ -136,10 +136,12 @@
 	display: inline;
 }
 
-#all-blogposts:hover {
-	color: black!important;
-    box-shadow: 0 -10px 0 0 var(--egg-yolk) inset!important;
-
+@media (min-width: 1024px) {
+	#all-blogposts:hover {
+		color: black!important;
+		box-shadow: 0 -10px 0 0 var(--egg-yolk) inset!important;
+	
+	}
 }
 
 @media (min-width: 1920px) {

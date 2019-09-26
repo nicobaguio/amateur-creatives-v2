@@ -8,11 +8,6 @@
     font-family: 'Realtime-Semibold';
 }
 
-.post-container:hover {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-    transform: scale(1.03);
-}
-
 .post-container a {
     color: black;
     text-decoration: none;
@@ -64,6 +59,11 @@
         margin: 20px!important;
     }
 
+    .post-container:hover {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        transform: scale(1.03);
+    }
+    
     .post-container.first {
         width: 640px;
         margin: auto;
