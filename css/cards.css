@@ -93,7 +93,7 @@
         display: inline-block;
     }
 
-    .post-container.first .read-this:hover {
+    .post-container.first:hover .read-this {
         background-position: 0%;
         color: white;
     }
