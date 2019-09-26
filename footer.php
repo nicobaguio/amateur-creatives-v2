@@ -43,8 +43,8 @@
                 <p><a href="/privacy">privacy policy</a></p>
             </div>
             <div id="actual-heroes">
-                <p>website design by <a href="/">amateur creatives</a>;</p>
-                <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">Nico Baguio</a> &copy <?php echo date("Y"); ?>.</p>
+                <p>designed by <a href="/">amateur creatives</a>;</p>
+                <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">Nico Baguio</a> &copy <?php echo date("Y"); ?></p>
             </div>
         </div>
     </div>

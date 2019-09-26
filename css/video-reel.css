@@ -33,6 +33,7 @@
 
 #video-title-container {
     width: 66.66vw;
+    padding: 5px;
 }
 
 #video-title {
@@ -52,8 +53,8 @@
     font-family: 'Realtime-Semibold';
     font-size: 18px;
     padding: 5px 10px;
-    margin-left: 15px;
-    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-bottom: 20px;
     background-size: 300% auto;
     background-position: 100%;
     background-image: linear-gradient(to left, white 0%, white 40%, var(--vogue-red) 50%);
