@@ -113,20 +113,3 @@
 #typed-container {
     margin-right: -55px;
 }
-
-#prefooter-container .logo {
-    padding-top: 20px!important;
-}
-
-#footer-menu {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-#footer-menu .menu-item a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Realtime-Semibold';
-    font-size: 18px;
-}

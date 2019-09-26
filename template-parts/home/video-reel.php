@@ -1,6 +1,6 @@
 <?php $video_reel_img = get_field('video_reel') ?>
 <div id="video-reel-container">
-    <?php echo wp_get_attachment_image($video_reel_img, null, false, array('id' => 'container-header-img')) ?>
+    <?php echo wp_get_attachment_image($video_reel_img, null, false, array('class' => 'container-header-img')) ?>
     <div class="video-embed-container">
         <?php
             $video_post = get_posts( array(

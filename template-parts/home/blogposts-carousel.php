@@ -1,6 +1,6 @@
 <?php $latest_blogposts_img = get_field('latest_blogposts_img') ?>
 <div id="latest-blogposts-container">
-    <?php echo wp_get_attachment_image($latest_blogposts_img, null, false, array('id' => 'container-header-img')) ?>
+    <?php echo wp_get_attachment_image($latest_blogposts_img, null, false, array('class' => 'container-header-img')) ?>
     <div class="main-carousel" id="carousel-container">
         <?php
             global $the_query;
