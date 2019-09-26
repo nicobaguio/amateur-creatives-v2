@@ -54,8 +54,16 @@
     padding: 5px 10px;
     margin-left: 15px;
     margin-bottom: 25px;
-    /* border: 2px var(--vogue-red) solid; */
-    background-color: var(--vogue-red);
-    color: white;
+    background-size: 300% auto;
+    background-position: 100%;
+    background-image: linear-gradient(to left, white 0%, white 40%, var(--vogue-red) 50%);
+    border: 2px var(--vogue-red) solid;
     display: inline-block;
+}
+
+@media (min-width: 1024px) {
+    #video-link:hover {
+        background-position: 0%;
+        transition: background-position 0.5s;
+    }
 }
