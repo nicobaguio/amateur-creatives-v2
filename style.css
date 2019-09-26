@@ -1,7 +1,7 @@
 /*
 Theme Name: Nico's Awesome v2
 Author: Nico Baguio
-Description: Twenty Seventeen brings your site to life with immersive featured images and subtle animations. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Description: Custom theme developed with love <3
 License: MIT 
 License URI: https://opensource.org/licenses/MIT
 
@@ -16,6 +16,7 @@ Developed by Nico Baguio.
     --egg-yolk: #FEEB52;
     --vogue-red: #CE4D52;
     --seafoam: #94C7C2;
+    --charcoal: #101318;
     font-size: 50%;
 }
 
