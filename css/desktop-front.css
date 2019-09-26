@@ -119,6 +119,7 @@
 	margin-top: 0px;
 	max-width: 576px;
 	max-height: 324px;
+	min-height: 136px;
 }
 
 .hero-header-widget {
