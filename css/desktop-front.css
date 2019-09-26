@@ -162,7 +162,7 @@
 	margin-left: auto;
 }
 
-#latest-blogposts-container {
+#latest-blogposts-container, #video-reel-container, #card-link-container, #newsletter-footer-container {
 	margin-left: 30vw;
 }
 
