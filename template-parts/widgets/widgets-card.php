@@ -25,8 +25,7 @@
             <h1 class="card-title">
                 <?php the_title(); ?>
             </h1>
-            <h5 class="read-this" style="display: <?php echo $is_first ? "inline-block" : "none" ?>">READ THIS</h5>
+            <?php echo $is_first ? '<h5 class="read-this">READ THIS</h5>' : null ?>
         </div>
-
     </a>
 </div>

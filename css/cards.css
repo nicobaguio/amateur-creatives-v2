@@ -55,6 +55,10 @@
     border: 2.5px var(--egg-yolk) solid;
 }
 
+.post-container.first .read-this {
+    display: none;
+}
+
 @media (min-width: 1024px) {
     .post-container {
         margin: 20px!important;
@@ -86,6 +90,7 @@
         position: relative;
         top: 7.5px;
         left: 250px;
+        display: inline-block;
     }
 
     .post-container.first .read-this:hover {
