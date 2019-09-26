@@ -36,14 +36,16 @@
             <?php echo do_shortcode("[instagram-feed height=375 heightunit=px width=450 widthunit=px showheader=false showbutton=false]") ?>
         </div>
     </div>
-    <div id="actual-footer-container">
-        <div id="pages-container">
-            <p><a href="/terms">terms of use</a></p>
-            <p><a href="/privacy">privacy policy</a></p>
-        </div>
-        <div id="actual-heroes">
-            <p>website design by <a href="/">amateur creatives</a>;</p>
-            <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">Nico Baguio</a> &copy <?php echo date("Y"); ?>.</p>
+    <div class="black-bg">
+        <div id="actual-footer-container">
+            <div id="pages-container">
+                <p><a href="/terms">terms of use</a></p>
+                <p><a href="/privacy">privacy policy</a></p>
+            </div>
+            <div id="actual-heroes">
+                <p>website design by <a href="/">amateur creatives</a>;</p>
+                <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">Nico Baguio</a> &copy <?php echo date("Y"); ?>.</p>
+            </div>
         </div>
     </div>
 </footer>

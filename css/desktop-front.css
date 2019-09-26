@@ -185,11 +185,16 @@
 	background-color: var(--salmon);
 }
 
+.small .black-bg {
+	background-color: black;
+}
+
 #latest-blogposts-container,
 #video-reel-container,
 #card-link-container,
 #newsletter-footer-container,
-#prefooter-menu-container {
+#prefooter-menu-container,
+#actual-footer-container {
 	margin-left: 30vw;
 }
 
@@ -197,7 +202,8 @@
 .small #video-reel-container,
 .small #card-link-container,
 .small #newsletter-footer-container,
-.small #prefooter-menu-container {
+.small #prefooter-menu-container,
+#actual-footer-container {
 	margin-left: 20vw;
 }
 
