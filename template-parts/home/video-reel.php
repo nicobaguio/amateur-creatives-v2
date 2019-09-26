@@ -14,7 +14,7 @@
             $embed = get_field('video_embed', $video_post_id);
             $embed_str = 'https://www.youtube.com/embed/' . end(explode('=', $embed))
         ?>
-
+        <div id="video-frame-wrapper">
         <iframe
             id="video-frame"
             src="<?php echo $embed_str ?>"
@@ -22,6 +22,8 @@
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
         </iframe>
+        </div>
+
     </div>
     <div id="video-title-container">
         <h2 id="video-title"><?php echo $video_post_title ?></h2>
