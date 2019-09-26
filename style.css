@@ -181,6 +181,11 @@ a {
     font-size: 2em;
     padding-left: 10px;
     flex: 1 1 auto;
+    -webkit-appearance: none;
+    background-image: url('assets/search.svg');
+    background-position: 97.5% center;
+    background-repeat: no-repeat;
+    border-radius: 0;
 }
 
 input#search-text::-webkit-input-placeholder {
