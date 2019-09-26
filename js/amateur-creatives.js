@@ -1,21 +1,19 @@
-var hamburger = document.querySelector('.hamburger');
-var page_overlay = document.querySelector('#page-overlay');
-var body_container = document.querySelector('#body-container');
-var header_links = document.querySelectorAll('.menu-item a');
-var social_icons = document.querySelectorAll('.social-icon');
-var carousel = document.querySelector('#carousel-container');
+let hamburger = document.querySelector('.hamburger');
+let page_overlay = document.querySelector('#page-overlay');
+let body_container = document.querySelector('#body-container');
+let header_links = document.querySelectorAll('.menu-item a');
+let social_icons = document.querySelectorAll('.social-icon');
+let carousel = document.querySelector('#carousel-container');
+let isDesktop = window.matchMedia("(min-width: 1023px)")
 
-var DesktopTransform = function() {
-    isDesktop = window.matchMedia("(min-width: 1024px)")
+let DesktopTransform = function() {
+    let isDesktop = window.matchMedia("(min-width: 1024px)").matches
+    console.log(isDesktop);
+    hamburger.classList.toggle('is-active', isDesktop);
+};
 
-    if ( !isDesktop.matches ) {
-        console.log('This is not a desktop...');
-        hamburger.classList.remove('is-active');
-    }
-}
-
-document.addEventListener('DOMContentLoaded', DesktopTransform, false);
-document.addEventListener('onorientationchange', DesktopTransform, false);
+document.addEventListener('DOMContentLoaded', DesktopTransform);
+window.addEventListener('resize', DesktopTransform, false);
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('is-active');
@@ -41,7 +39,7 @@ page_overlay.addEventListener('scroll', function() {
     })
 });
 
-// for ( var i = 0; i < social_icons.length ; i++ ) {
+// for ( let i = 0; i < social_icons.length ; i++ ) {
 //     social_icons[i].addEventListener('mouseover', function() {
 //         console.log('Hovered on: ' + i)
 //     })    
