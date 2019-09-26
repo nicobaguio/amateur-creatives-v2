@@ -171,11 +171,23 @@
 }
 
 .small #latest-blogposts-container {
-	margin-left: auto;
+	margin-left: 20vw;
+	background-color: #F4F4F4;
+}
+
+.small .white-bg {
+	background-color: white;
 }
 
 #latest-blogposts-container, #video-reel-container, #card-link-container, #newsletter-footer-container {
 	margin-left: 30vw;
+}
+
+.small #latest-blogposts-container,
+.small #video-reel-container,
+.small #card-link-container,
+.small #newsletter-footer-container {
+	margin-left: 20vw;
 }
 
 #carousel-container {
