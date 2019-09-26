@@ -5,7 +5,9 @@
 <div id="mobile">
 <?php get_template_part( 'template-parts/home/blogposts', 'carousel' ); ?>
 </div>
-<?php get_template_part( 'template-parts/home/video', 'reel' ); ?>
+<div class="white-bg">
+    <?php get_template_part( 'template-parts/home/video', 'reel' ); ?>
+</div>
 <?php
     $shop_icon = get_field('shop_icon');
     $blog_icon = get_field('blog_icon');
@@ -34,5 +36,8 @@
         </a>
     </div>
 </div>
-<?php get_template_part( 'template-parts/home/home', 'newsletter' ); ?>
+<div class="white-bg">
+    <?php get_template_part( 'template-parts/home/home', 'newsletter' ); ?>
+</div>
+
 <?php get_footer(); ?>
