@@ -1,5 +1,10 @@
 <?php get_header(); ?>
+<div id="desktop">
+    <?php get_template_part( 'template-parts/home/blogposts', 'carousel' ); ?>
+</div>
+<div id="mobile">
 <?php get_template_part( 'template-parts/home/blogposts', 'carousel' ); ?>
+</div>
 <?php get_template_part( 'template-parts/home/video', 'reel' ); ?>
 <?php
     $shop_icon = get_field('shop_icon');

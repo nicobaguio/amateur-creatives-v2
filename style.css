@@ -413,3 +413,21 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     margin-top: 10px;
     padding-bottom: 10px;
 }
+
+#desktop {
+    display: none
+}
+
+#mobile {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    #desktop {
+        display: block;
+    }
+
+    #mobile {
+        display: none;
+    }
+}
