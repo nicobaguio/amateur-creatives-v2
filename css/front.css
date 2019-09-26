@@ -37,16 +37,6 @@
     display: flex;
 }
 
-#top-blank-space {
-    height: 165px;
-    width: 100vw;
-    display: none;
-}
-
-.reveal #top-blank-space {
-    display: block;
-}
-
 #page-overlay {
     height: 0px;
     background-color: var(--lilac-fog);
@@ -93,7 +83,7 @@
 }
 
 #search-form-container {
-    margin-bottom: 25px;
+    margin-bottom: 100px;
 }
 
 #search-text {

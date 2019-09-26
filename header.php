@@ -21,12 +21,9 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                 </button>
             </div>
             <div id="logo-header-container">
-                <!-- <div class="logo-pads"></div> -->
                 <div class="logo"><?php the_custom_logo(); ?></div>
-                <!-- <div class="logo-pads"></div> -->
             </div>
         </div>
-        <div id="top-blank-space"></div>
         <div id="middle-container">
             <div id="page-overlay">
                 <?php wp_nav_menu( array (
