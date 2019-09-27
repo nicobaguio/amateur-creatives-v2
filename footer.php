@@ -33,10 +33,10 @@
         </div>
         <div id="instagram-feed-container">
             <?php dynamic_sidebar('footer-instagram-image') ?>
-            <?php echo do_shortcode("[instagram-feed height=375 heightunit=px width=450 widthunit=px showheader=false showbutton=false]") ?>
+            <?php echo do_shortcode("[instagram-feed height=375 heightunit=px width=450 widthunit=px showheader=false showbutton=false showfollow=false]") ?>
         </div>
     </div>
-    <div class="black-bg">
+    <div class="black-bg" id="footer-container">
         <div id="actual-footer-container">
             <div id="pages-container">
                 <p><a href="/terms">terms of use</a></p>
@@ -44,7 +44,7 @@
             </div>
             <div id="actual-heroes">
                 <p>designed by <a href="/">amateur creatives</a>;</p>
-                <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">Nico Baguio</a> &copy <?php echo date("Y"); ?></p>
+                <p>developed by <a href="https://youtu.be/dQw4w9WgXcQ?t=43">nico baguio</a> &copy <?php echo date("Y"); ?></p>
             </div>
         </div>
     </div>

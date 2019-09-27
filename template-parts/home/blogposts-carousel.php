@@ -20,7 +20,7 @@
         <?php endif; ?>	
     </div>
     <div id="all-blogposts-container">
-        <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
+        <a id="all-blogposts-link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
             <h3 id="all-blogposts">check out all the blogposts -></h3>
         </a>
     </div>
