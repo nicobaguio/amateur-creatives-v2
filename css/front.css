@@ -103,3 +103,14 @@
 #typed-container {
     margin-right: -55px;
 }
+
+#all-blogposts-container {
+    text-align: center;
+    margin: 45px 0px 15px;
+}
+
+#video-reel-container,
+#newsletter-footer-container
+#prefooter-container {
+    padding-top: 15px;
+}
