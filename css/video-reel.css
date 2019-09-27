@@ -4,7 +4,7 @@
 
 #video-title-container {
     float: right;
-    margin-right: 4vw;
+    margin-right: calc(50% - 320px);
     margin-bottom: 40px;
     max-width: 320px;
     max-height: 180px;
@@ -14,9 +14,9 @@
 }
 
 #video-frame-wrapper {
-    margin-left: 4vw;
+    margin-left: 3.33%;
     margin-top: 20px;
-    max-width: 640px;
+    /* max-width: 640px; */
     width: 66.66%;
     padding-top: 37.5%;
     position: relative;
@@ -32,7 +32,7 @@
 }
 
 #video-title-container {
-    width: 66.66vw;
+    width: 66.66%;
     padding: 5px;
 }
 
@@ -66,5 +66,23 @@
     #video-link:hover {
         background-position: 0%;
         transition: background-position 0.5s;
+    }
+}
+
+@media (min-width: 1920px) {
+    #video-frame-wrapper {
+        width: 896px;
+        padding-top: 504px;
+    }
+
+    #video-title-container {
+        max-width: 525px;
+        max-height: none;
+        margin-right: calc(50% - 525px);
+        font-size: 25px;
+    }
+
+    #video-title, #video-link {
+        font-size: 30px;
     }
 }
