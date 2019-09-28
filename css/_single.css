@@ -6,6 +6,10 @@
     display: none;
 }
 
+#middle-container {
+    max-height: none;
+}
+
 .category-container {
     display: flex;
     flex-flow: row wrap;
@@ -51,7 +55,7 @@
 }
 
 .blog-header-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -74,7 +78,7 @@
     font-weight: 100;
     color: #101318;
     padding-bottom: 15px;
-    margin: 0px;
+
 }
 
 #content h2 {
@@ -114,6 +118,10 @@
     font-weight: 100;
 }
 
+#content a:hover {
+    background-color: var(--egg-yolk);
+}
+
 #content p {
     font-family: 'PMNCaecilia', serif;
     font-size: 16px;
@@ -134,7 +142,8 @@
 }
 
 blockquote {
-    margin: 10% 5%;
+    margin: 0px;
+    text-align: center;
 }
 
 #content blockquote p {
@@ -147,7 +156,7 @@ blockquote {
 }
 
 #content ul {
-    padding: 0px 5%;
+    padding-left: 25%;
     margin: 0px 10%;
     list-style: none;
 }
@@ -168,16 +177,33 @@ blockquote {
 #content img {
     margin-bottom: 30px;
     display: block;
-    max-width: 100%;
     height: auto;
 }
 
-#content img.alignnone {
-    width: 100%;
+#content img.aligncenter {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-#content img.aligncenter {
-    width: 100%;
+#content img.alignleft {
+    float: left;
+    margin: 20px 20px 20px 0px;
+    width: 50%;
+    max-width: 400px;
+}
+
+#content img.alignright {
+    float: right;
+    margin: 20px 0px 20px 20px;
+    width: 50%;
+    max-width: 400px;
+}
+
+#content img.alignnone {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #content .oembed {
@@ -204,20 +230,20 @@ blockquote {
     border-image: linear-gradient(to right, var(--lilac-fog), var(--egg-yolk)) 1 1%;
     padding: 10px;
     max-width: 300px;
-    margin: 10px 5%;
 }
 
 .note-left {
     float: left;
+    margin: 20px 20px 20px 5%;
 }
 
 .note-right {
     float: right;
+    margin: 20px 5% 20px 20px;
 }
 
 .note-center {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
 }
 
 .note-left span,
@@ -237,4 +263,25 @@ hr {
     display: block;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+@media (min-width: 1024px) {
+    #post-container {
+        margin-left: 30vw;
+    }
+
+    .small #post-container {
+        margin-left: 20vw;
+    }
+}
+
+@media (min-width: 1921px) {
+    #post-container {
+        margin-left: calc(50vw - 384px);
+        margin-right: calc(50vw - 960px);
+    }
+
+    .small #post-container {
+        margin-left: calc(50vw - 660px);
+    }
 }

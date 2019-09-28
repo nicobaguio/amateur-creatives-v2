@@ -373,10 +373,15 @@ function ac_custom_styling( $atts, $content = null ) {
 function shapeSpace_oembed_html($html, $url, $attr, $post_id) {
     $embed = str_replace("</div>", "", str_replace('<div>', "", $html));
 	return '<div class="oembed">'. $embed .'</div>';
-}
+};
+
+function filter_ptags_on_images($content) {
+	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+};
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
+        add_filter('the_content', 'filter_ptags_on_images');
         add_filter('embed_oembed_html', 'shapeSpace_oembed_html', 99, 4);
         add_image_size( 'card-thumbnail', 500);
         add_shortcode('ac_tag', 'ac_custom_styling');
