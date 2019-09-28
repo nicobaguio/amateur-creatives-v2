@@ -9,6 +9,15 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Amateur Creatives</title>
     <?php wp_head(); ?>
+    <style type="text/css">
+        hr {
+            background-image: url("<?php echo get_template_directory_uri() ?>/assets/divider.png")
+        }
+
+        #content ul li {
+            background-image: url("<?php echo get_template_directory_uri() ?>/assets/ul-bullet.png")
+        }
+    </style>
 </head>
 <body id="body-container">
     <header id="header-container">

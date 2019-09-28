@@ -33,7 +33,7 @@
         </div>
         <div id="instagram-feed-container">
             <?php dynamic_sidebar('footer-instagram-image') ?>
-            <?php echo do_shortcode("[instagram-feed height=375 heightunit=px width=450 widthunit=px showheader=false showbutton=false showfollow=false]") ?>
+
         </div>
     </div>
     <div class="black-bg" id="footer-container">

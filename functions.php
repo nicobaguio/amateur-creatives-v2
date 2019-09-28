@@ -29,6 +29,9 @@ if ( ! function_exists( 'my_styles' ) ) {
             wp_enqueue_style( 'cards', get_template_directory_uri() . '/css/_cards.css' );
             wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/_video-reel.css' );
         };
+        if ( is_single() ) {
+            wp_enqueue_style( 'single', get_template_directory_uri() . '/css/_single.css');
+        }
     };    
 }
 
@@ -359,12 +362,24 @@ if( function_exists('acf_add_local_field_group') ) {
         'active' => true,
         'description' => '',
     ));
-}
+};
 
-add_image_size( 'card-thumbnail', 500);
+function ac_custom_styling( $atts, $content = null ) {
+	if ( isset ( $atts['style'] ) ) {
+		return "<div class='{$atts['style']}'><span>$content</span></div>";
+	}
+};
+
+function shapeSpace_oembed_html($html, $url, $attr, $post_id) {
+    $embed = str_replace("</div>", "", str_replace('<div>', "", $html));
+	return '<div class="oembed">'. $embed .'</div>';
+}
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
+        add_filter('embed_oembed_html', 'shapeSpace_oembed_html', 99, 4);
+        add_image_size( 'card-thumbnail', 500);
+        add_shortcode('ac_tag', 'ac_custom_styling');
         add_theme_support( 'post-thumbnails' );
         add_action('init','ac_nav_menus' );
         add_action('widgets_init','ac_widgets');
