@@ -29,7 +29,7 @@ if ( ! function_exists( 'my_styles' ) ) {
             wp_enqueue_style( 'cards', get_template_directory_uri() . '/css/_cards.css' );
             wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/_video-reel.css' );
         };
-        if ( is_single() ) {
+        if ( is_singular() ) {
             wp_enqueue_style( 'single', get_template_directory_uri() . '/css/_single.css');
         }
     };    
