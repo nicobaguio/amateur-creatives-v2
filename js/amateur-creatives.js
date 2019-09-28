@@ -1,9 +1,8 @@
 let hamburger = document.querySelector('.hamburger');
 let page_overlay = document.querySelector('#page-overlay');
 let body_container = document.querySelector('#body-container');
-let header_links = document.querySelectorAll('.menu-item a');
+let header_links = document.querySelectorAll('#menu-header-container .menu-item a');
 let social_icons = document.querySelectorAll('.social-icon');
-let carousel = document.querySelector('#carousel-container');
 let isDesktop = window.matchMedia("(min-width: 1023px)")
 
 let DesktopTransform = function() {
