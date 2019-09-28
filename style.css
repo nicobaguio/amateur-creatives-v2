@@ -222,26 +222,24 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     display: none;
 }
 
-.newsletter {
+.newsletter,
+.mc4wp-form {
     margin: 0px 10px;
     padding-bottom: 10px;
 	font-family: 'PMNCaecilia', sans-serif;
 	font-size: 10px;
 }
 
-.newsletter > div {
-	border: 2px dotted black;
-	padding: 10px;
-}
-
-.newsletter input {
+.newsletter input,
+.mc4wp-form input {
 	border: 1px var(--salmon) solid;
     font-family: 'Realtime-Semibold';
     height: 25px;
     padding-left: 10px;
 }
 
-.newsletter input[type="submit"] {
+.newsletter input[type="submit"],
+.mc4wp-form input[type="submit"] {
     background-size: 300% auto;
     background-position: 100%;
     transition: background-position 0.5s;
@@ -253,7 +251,12 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     margin-top: -7px;
 }
 
-.newsletter input[type="submit"]:hover {
+.mc4wp-form input[type="checkbox"] {
+    margin-top: 0px;
+}
+
+.newsletter input[type="submit"]:hover,
+.mc4wp-form input[type="submit"]:hover {
     background-position: 0%;
 }
 
@@ -266,17 +269,29 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     margin: auto;
 }
 
-.newsletter-widget {
-	background-color: #fff;
+.mc4wp-form {
+    max-width: 400px;
 }
 
-.newsletter-widget h1 {
+.newsletter-widget,
+.mc4wp-form {
+    background-color: #fff;
+    border: 2px dotted black;
+	padding: 10px;
+}
+
+.newsletter-widget h1,
+.mc4wp-form h1 {
 	text-align: center;
 }
 
 .privacypolicy {
 	display: flex;
 	text-align: left;
+}
+
+#content .privacypolicy {
+    font-size: 10px;
 }
 
 #header-hero-container {

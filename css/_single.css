@@ -1,0 +1,240 @@
+#body-container {
+    background-color: white;
+}
+
+#header-hero-container {
+    display: none;
+}
+
+.category-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 30px 15px 5px;
+}
+
+.category {
+    margin: 0px 0px 10px 5px;
+    display: inline;
+    font-family: 'Realtime-Semibold', sans-serif;
+    background-color: var(--salmon);
+    /* color: #EBB4BA; */
+    color: #D5838C;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.title, .author {
+    font-family: 'PMNCaecilia', serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 25px;
+    padding: 0px 10%;
+    font-weight: 100;
+    margin: 10px;
+}
+
+.author {
+    font-size: 14px;
+}
+
+.author span {
+    text-transform: uppercase;
+}
+
+.blog-graphic-container {
+    margin-top: 50px;
+}
+
+.blog-header-img {
+    max-width: 100%;
+    height: auto;
+}
+
+#content {
+    margin-top: 30px;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content p {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#content h1 {
+    font-family: 'PMNCaecilia', serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: #101318;
+    padding-bottom: 15px;
+    margin: 0px;
+}
+
+#content h2 {
+    font-family: 'Realtime-Semibold', serif;
+    line-height: 1.5;
+    color: var(--vogue-red);
+    font-size: 16px;
+    padding-bottom: 5px;
+    font-weight: 100;
+}
+
+#content h3 {
+    font-family: 'Realtime-Semibold', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #101318;
+    padding-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+#content h4 {
+    font-family: 'PMNCaecilia', serif;
+    font-style: italic;
+    letter-spacing: -0.5px;
+    font-size: 20px;
+    color: var(--seafoam);
+    margin-bottom: 1rem;
+    font-weight: 100;
+}
+
+#content a {
+    box-shadow: 0 -7px var(--egg-yolk) inset;
+    background-color: transparent;
+    outline: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+#content p {
+    font-family: 'PMNCaecilia', serif;
+    font-size: 16px;
+    line-height: 28px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+#content p strong {
+    font-family: 'Realtime-Semibold', sans-serif;
+    font-weight: 600!important;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+blockquote {
+    margin: 10% 5%;
+}
+
+#content blockquote p {
+	font-family: 'PMNCaecilia', serif;
+	color: #CE4D52;
+	font-size: 18px;
+	line-height: 25pt;
+    letter-spacing: 1px;
+    padding: 0px;
+}
+
+#content ul {
+    padding: 0px 5%;
+    margin: 0px 10%;
+    list-style: none;
+}
+
+#content ul li {
+    background-position: 0% 15%;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    padding-left: 25px;
+    font-family: 'Realtime-Semibold', sans-serif;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-bottom: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+#content img {
+    margin-bottom: 30px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#content img.alignnone {
+    width: 100%;
+}
+
+#content img.aligncenter {
+    width: 100%;
+}
+
+#content .oembed {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    height: 0;
+    margin-bottom: 15px;
+}
+
+#content .oembed iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.note-left, .note-right, .note-center {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to right, var(--lilac-fog), var(--egg-yolk)) 1 1%;
+    padding: 10px;
+    max-width: 300px;
+    margin: 10px 5%;
+}
+
+.note-left {
+    float: left;
+}
+
+.note-right {
+    float: right;
+}
+
+.note-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note-left span,
+.note-right span,
+.note-center span {
+    font-family: 'PMNCaecilia', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 24px;
+    color: #757575;
+}
+
+hr {
+    height: 60px!important;
+    border: 0!important;
+    padding-bottom: 20px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
