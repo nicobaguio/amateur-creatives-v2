@@ -1,0 +1,14 @@
+#header-hero-container .hero-header-widget:last-child {
+    margin-left: 15px;
+}
+
+#header-hero-container {
+    align-items: center;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 20px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}

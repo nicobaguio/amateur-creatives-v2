@@ -2,10 +2,6 @@
     background-color: white;
 }
 
-#header-hero-container {
-    display: none;
-}
-
 #middle-container {
     max-height: none;
 }
@@ -193,10 +189,10 @@ blockquote {
     height: auto;
 }
 
-#content img.aligncenter {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+#content img.alignnone {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #content img.alignleft {
@@ -213,7 +209,7 @@ blockquote {
     max-width: 400px;
 }
 
-#content img.alignnone {
+#content img.aligncenter {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -279,22 +275,22 @@ hr {
 }
 
 @media (min-width: 1024px) {
-    #post-container {
+    #singular-container {
         margin-left: 30vw;
     }
 
-    .small #post-container {
+    .small #singular-container {
         margin-left: 20vw;
     }
 }
 
 @media (min-width: 1921px) {
-    #post-container {
+    #singular-container {
         margin-left: calc(50vw - 384px);
         margin-right: calc(50vw - 960px);
     }
 
-    .small #post-container {
+    .small #singular-container {
         margin-left: calc(50vw - 660px);
     }
 }

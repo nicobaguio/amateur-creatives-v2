@@ -7,7 +7,7 @@
     while ( have_posts() ):
         the_post();
 ?>
-    <div id="post-container">
+    <div id="singular-container">
         <div id="post-header">
             <div class="category-container">
                     <?php
