@@ -1,7 +1,10 @@
 <?php
     $post_class = has_tag(array('patreon', 'Patreon')) ? "is-patreon" : null;
+    global $post_idx;
+    $is_first = $post_idx == 0;
+    $desktop_class = $is_first ? "first" : null;
 ?>
-<div class="post-container <?php echo "{$post_class}"?>">
+<div class="post-container <?php echo "{$post_class} {$desktop_class}"?>">
     <?php
         $size_to_use = $is_first ? 'full' : 'card-thumbnail';
         // $size_to_use = 'card-thumbnail';

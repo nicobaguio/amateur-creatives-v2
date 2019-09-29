@@ -12,7 +12,7 @@
                 global $post_idx;
                 $post_idx = $the_query->current_post;
             ?>
-            <?php get_template_part('template-parts/widgets/widgets', 'card') ?>
+            <?php get_template_part('template-parts/widgets/widgets', 'carousel') ?>
             <?php endwhile ?>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>

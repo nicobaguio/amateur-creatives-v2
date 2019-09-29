@@ -91,15 +91,6 @@
     font-size: 2em;
 }
 
-#header-hero-container {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 20px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #typed-container {
     margin-right: -55px;
 }
