@@ -14,8 +14,11 @@
 	max-width: 576px;
 	max-height: 1080px;
 	display: flex;
+	display: -webkit-flex;
 	flex-flow: column wrap;
+	-webkit-flex-flow: column wrap;
 	justify-content: space-between;
+	-webkit-justify-content: space-between;
 }
 
 @media (min-width: 1921px) {
@@ -30,9 +33,13 @@
 
 #middle-container {
 	flex: 2 1 auto;
+	-webkit-flex: 2 1 auto;
 	display: flex;
+	display: -webkit-flex;
 	flex-flow: column wrap;
+	-webkit-flex-flow: column wrap;
 	justify-content: space-between;
+	-webkit-justify-content: space-between;
 	max-height: calc(70vh - 150px);
 }
 
@@ -86,7 +93,7 @@
 }
 
 #menu-header-container {
-	font-size: 3em;
+	font-size: 2em;
 	margin-top: 0px;
 }
 
@@ -116,11 +123,11 @@
 #header-hero-container {
 	background-color: var(--salmon);
 	display: flex;
+	display: -webkit-flex;
 	margin-top: 0px;
 	max-width: 576px;
 	max-height: 324px;
-	min-height: 136px;
-	padding: 10px 0px 50px;
+	padding: 10px 0px 70px;
 }
 
 .hero-header-widget {
@@ -272,8 +279,11 @@
 
 #carousel-container {
 	display: flex;
+	display: -webkit-flex;
 	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
 	justify-content: center;
+	-webkit-justify-content: center;
 	margin: 0px calc(50% - 370px);
 }
 
@@ -284,8 +294,10 @@
 
 #prefooter-container {
 	display: flex;
+	display: -webkit-flex;
 	background-color: var(--salmon);
 	justify-content: center;
+	-webkit-justify-content: center;
 }
 
 #prefooter-menu-container {
