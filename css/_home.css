@@ -6,9 +6,18 @@
     align-items: center;
     margin-top: 15px;
     display: flex;
+    display: -webkit-flex;
     flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse nowrap;
     margin-bottom: 20px;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+    #header-hero-container {
+        margin: 15px 0px 0px;
+        max-width: none;
+    }
 }
