@@ -49,6 +49,18 @@
         </div>
     </div>
 </footer>
+<script type="text/javascript">
+    page_loader = document.querySelector('#page-loader')
+    console.log('Loaded inline JS');
+    loaded = () => {
+        console.log('Window loaded!');
+        page_loader.classList.add('loaded');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loaded();
+    }, false);
+</script>
 <?php wp_footer(); ?>
 </body>
 </html>

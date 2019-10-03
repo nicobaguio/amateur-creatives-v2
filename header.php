@@ -17,9 +17,45 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
         #content ul li {
             background-image: url("<?php echo get_template_directory_uri() ?>/assets/ul-bullet.png")
         }
+
+        #page-loader {
+            background: white;
+            position: fixed;
+            top: 0;
+            left: -25vw;
+            height: 100vh;
+            width: 150vw;
+            z-index: 5;
+        }
+
+        #page-loader.loaded {
+            display: none;
+        }
+
+        .animated-gradient {
+            background: repeating-linear-gradient(to right, #B6C2F1 0%, #FEEB52 50%, #B6C2F1 100%);
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 200% auto;
+            background-position: 0 100%;
+            animation: gradient 2s infinite;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+
+        @keyframes gradient { 
+            0%   { background-position: 0 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body id="body-container">
+    <div id="page-loader">
+        <div class="animated-gradient"></div>
+    </div>
     <header id="header-container">
         <div id="top-container">
             <div id="top-header-container">
