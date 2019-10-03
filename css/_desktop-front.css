@@ -60,7 +60,7 @@
 	max-width: 65px;
 	width: auto;
 	height: auto;
-	z-index: 9999;
+	z-index: 5;
 }
 
 .small #header-container #menu-header-container {
