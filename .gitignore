@@ -1,2 +1,4 @@
 *.zip
-*.json
+acf-*.json
+/node_modules
+package.json
