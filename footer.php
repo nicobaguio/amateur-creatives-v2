@@ -51,9 +51,9 @@
 </footer>
 <script type="text/javascript">
     page_loader = document.querySelector('#page-loader')
-    console.log('Loaded inline JS');
+    // console.log('Loaded inline JS');
     loaded = () => {
-        console.log('Window loaded!');
+        // console.log('Window loaded!');
         page_loader.classList.add('loaded');
     }
 

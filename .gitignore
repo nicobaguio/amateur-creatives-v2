@@ -3,3 +3,5 @@ acf-*.json
 /node_modules
 /bundled
 /dist
+/js/bundle.js
+/css

@@ -3,22 +3,29 @@ let page_overlay = document.querySelector('#page-overlay');
 let body_container = document.querySelector('#body-container');
 let header_links = document.querySelectorAll('#menu-header-container .menu-item a');
 let social_icons = document.querySelectorAll('.social-icon');
-let isDesktop = window.matchMedia("(min-width: 1023px)")
+let isDesktop = window.matchMedia("(min-width: 1023px)");
+let isHeaderSmall = sessionStorage.getItem('headersmall') ? sessionStorage.getItem('headersmall') : false;
 
-let DesktopTransform = function() {
+let headerTransform = function() {
     let isDesktop = window.matchMedia("(min-width: 1024px)").matches
-    console.log(isDesktop);
-    hamburger.classList.toggle('is-active', isDesktop);
+
+    if ( isDesktop ) {
+        hamburger.classList.toggle('is-active', !isHeaderSmall);
+        body_container.classList.toggle('small', isHeaderSmall);
+    }
 };
 
-document.addEventListener('DOMContentLoaded', DesktopTransform);
-window.addEventListener('resize', DesktopTransform, false);
+document.addEventListener('DOMContentLoaded', headerTransform);
+window.addEventListener('resize', headerTransform, false);
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('is-active');
+    isHeaderSmall = !isHeaderSmall;
+    sessionStorage.setItem('headersmall', isHeaderSmall);
+    console.log(isHeaderSmall);
 
     if ( isDesktop.matches ) {
-        console.log('Desktop...');
+        // console.log('Desktop...');
         body_container.classList.toggle('small');
     } else {
         body_container.classList.toggle('reveal');
