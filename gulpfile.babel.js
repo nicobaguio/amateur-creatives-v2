@@ -16,18 +16,7 @@ import zip from 'gulp-zip';
 const PRODUCTION = yargs.argv.prod;
 
 export const styles = () => {
-    return src('style.scss')
-        .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
-        .pipe(gulpif(PRODUCTION, cleanCss({compatibility: 'ie8'})))
-        .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-        .pipe(gulpif(PRODUCTION, dest('dist'), dest('.')))
-        .pipe(server.stream());
-}
-
-export const bundledStyles = () => {
-    return src(['scss/home.scss', 'scss/single.scss', 'scss/video-reel.scss'])
+    return src(['scss/bundle.scss', 'scss/home.scss', 'scss/single.scss', 'scss/video-reel.scss'])
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ])))
@@ -37,6 +26,10 @@ export const bundledStyles = () => {
     .pipe(server.stream());
 }
 
+export const fonts = () => {
+    return src('scss/bundle/webfonts/**/*')
+        .pipe(gulpif(PRODUCTION, dest('dist/css/webfonts'), dest('css/webfonts')))
+}
 export const images = () => {
     return src('images/**/*.{jpg,jpeg,png,svg,gif}')
         .pipe(gulpif(PRODUCTION, imagemin()))
@@ -44,11 +37,14 @@ export const images = () => {
 }
 
 export const copy = () => {
-    return src(['*.php', 'template-parts/**/*.php'], { base: '.'} )
+    return src(['*.php', 'template-parts/**/*.php', 'style.css', 'webfonts/**/*'], { base: '.'} )
     .pipe(gulpif(PRODUCTION, dest('dist')))
 }
 
-export const clean = () => del(['dist']);
+export const clean = (cb) => {
+    del(['dist', 'css']);
+    cb();
+} 
 
 export const scripts = () => {
     return src('js/bundle/bundle.js')
@@ -76,8 +72,8 @@ export const scripts = () => {
 }
 
 export const watchForChanges = () => {
-    watch('scss/**/*.scss', series(styles, bundledStyles, reload));
-    watch('style.scss', series(styles, reload));
+    watch('scss/**/*.scss', series(styles, reload));
+    // watch('style.scss', series(styles, reload));
     watch('images/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
     watch(['*.php', 'template-parts/**/*.php'], series(copy, reload));
     watch('js/**/*.js', series(scripts, reload));
@@ -103,7 +99,7 @@ export const compress = () => {
         .pipe(dest('bundled'))
 }
 
-export const dev = series(clean, parallel(styles, bundledStyles, images, copy, scripts), watchForChanges);
-export const build = series(clean, parallel(styles, bundledStyles, images, copy, scripts), compress);
+export const dev = series(clean, parallel(styles, fonts, images, copy, scripts), watchForChanges);
+export const build = series(clean, parallel(styles, fonts, images, copy, scripts), compress);
 
 export default dev;

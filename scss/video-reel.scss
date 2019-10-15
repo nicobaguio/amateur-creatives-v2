@@ -68,6 +68,13 @@
     }
 }
 
+@media (min-width: 760px) {
+	#video-frame-wrapper {
+		width: 600px;
+		padding-top: 377.5px;
+	}
+}
+
 @media (min-width: 1024px) {
     #video-link:hover {
         background-position: 0%;

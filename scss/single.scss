@@ -30,7 +30,7 @@
 }
 
 .title, .author {
-    font-family: 'PMNCaecilia', serif;
+    font-family: 'Realtime-Semibold', serif;
     text-align: center;
 }
 
@@ -277,13 +277,15 @@ hr {
     background-position: center center;
 }
 
+@media (min-width: 1000px) {
+	.small #singular-container {
+        margin-left: 300px;
+    }
+}
+
 @media (min-width: 1024px) {
     #singular-container {
         margin-left: 30vw;
-    }
-
-    .small #singular-container {
-        margin-left: 20vw;
     }
 }
 

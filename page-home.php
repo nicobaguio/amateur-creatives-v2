@@ -15,24 +15,24 @@
 ?>
 <div id="card-link-container">
     <div id="shop-card-link" class="card-link">
-        <a href="/shop">
+        <a href="#">
                 <?php echo wp_get_attachment_image( $shop_icon, 'thumbnail')?>
             <p class="card-link title">shop.</p>
-            <p class="card-link subtitle">Visit the shop and take home fun paper goods like stickers and zines!</p>
+            <p class="card-link subtitle"><i>coming soon!</i></p>
         </a>
     </div>
     <div id="blogs-card-link" class="card-link">
-        <a href="/blogs">
+        <a href="#">
                 <?php echo wp_get_attachment_image( $blog_icon, 'thumbnail')?>
             <p class="card-link title">courses.</p>
-            <p class="card-link subtitle">Visit the shop and take home fun paper goods like stickers and zines!</p>
+            <p class="card-link subtitle"><i>coming soon!</i></p>
         </a>
     </div>
     <div id="courses-card-link" class="card-link">
-        <a href="/courses">
+        <a href="https://patreon.com/amateurcreatives" target="blank">
                 <?php echo wp_get_attachment_image( $courses_icon, 'thumbnail')?>
             <p class="card-link title">patreon.</p>
-            <p class="card-link subtitle">Visit the shop and take home fun paper goods like stickers and zines!</p>
+            <p class="card-link subtitle"><i>currently paused due to #paperconph convention prep!</i></p>
         </a>
     </div>
 </div>

@@ -1,6 +1,39 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3823020, 2019-10-13T08:40:16-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Realtime-Semibold by Juri Zaech
+ * URL: https://www.myfonts.com/fonts/jurizaech/realtime/semibold/
+ * Copyright: Copyright &#x00A9; 2015 by Juri Zaech. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: CaeciliaLTStd-Italic by Monotype
+ * URL: https://www.myfonts.com/fonts/mti/pmn-caecilia/std-56-italic-190917/
+ * Copyright: Copyright &#x00A9; 2015 - 2019 Monotype Imaging Inc. All rights reserved.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: CaeciliaLTPro-55Roman by Monotype
+ * URL: https://www.myfonts.com/fonts/mti/pmn-caecilia/pro-55-roman-190917/
+ * Copyright: Copyright &#x00A9; 2015 - 2019 Monotype Imaging Inc. All rights reserved.
+ * Licensed pageviews: 250,000
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3823020
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/3a55ac");
 
-$font-path: "./scss/webfonts" !default;
+$font-path: "./webfonts" !default;
   
 @font-face {font-family: 'Realtime-Semibold';src: url('#{$font-path}/3A55AC_0_0.eot');src: url('#{$font-path}/3A55AC_0_0.eot?#iefix') format('embedded-opentype'),url('#{$font-path}/3A55AC_0_0.woff2') format('woff2'),url('#{$font-path}/3A55AC_0_0.woff') format('woff'),url('#{$font-path}/3A55AC_0_0.ttf') format('truetype');}
  

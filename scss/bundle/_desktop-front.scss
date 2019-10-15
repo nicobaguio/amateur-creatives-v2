@@ -1,5 +1,5 @@
 @media (min-width: 1024px) {
-		.small #header-container {
+	.small #header-container {
 		background-color: var(--lilac-fog);
 		max-width: 300px;
 		width: 20vw;
@@ -58,7 +58,7 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 65px;
+		max-width: 100px;
 		width: auto;
 		height: auto;
 		z-index: 5;
@@ -94,7 +94,7 @@
 	}
 
 	#menu-header-container {
-		font-size: 2em;
+		font-size: 4vh;
 		margin-top: 0px;
 	}
 
@@ -133,10 +133,9 @@
 		text-align: center;
 	}
 
-	#all-blogposts:hover {
-		color: black!important;
-		box-shadow: 0 -10px 0 0 var(--egg-yolk) inset!important;
-	
+	#latest-blogposts-container h3:hover {
+		background-position: 0%;
+		transition: background-position 0.5s;
 	}
 
 	.widget_text {
@@ -245,121 +244,25 @@
 		/* margin: auto; */
 		display: block;
 	}
-	
-	#instagram-feed-container .container-header-img {
-		width: 250px;
-	}
+}
 
-	.widget_text {
-		max-width: 50%;
-		flex: 2;
-	}
-	
-	.subtitle {
-		display: none;
-	}
-	
-	.card-link.title {
-		margin: 0px auto;
-		font-size: 40px;
-	}
-	
-	.card-link.subtitle {
-		display: inline-block;
-		padding: 0px 20%;
-		font-size: 16px;
-		margin-bottom: 45px;
-	}
-	
-	.small #latest-blogposts-container {
-		margin-left: 20vw;
-		background-color: #F4F4F4;
-	}
-	
-	.small .white-bg {
-		background-color: white;
-	}
-	
-	.small .salmon-bg {
-		background-color: var(--salmon);
-	}
-	
-	.small .black-bg {
-		background-color: black;
-	}
-	
-	#latest-blogposts-container,
-	#video-reel-container,
-	#card-link-container,
-	#newsletter-footer-container,
-	#footer-container {
-		margin-left: 30vw;
-	}
-	
-	#latest-blogposts-container,
-	#video-reel-container,
-	#newsletter-footer-container,
-	#prefooter-container,
-	#actual-footer-container {
-		padding: 15px 0px;
-	}
-	
-	#prefooter-container {
-		padding-left: 30vw;
-	}
-	
-	.small #prefooter-container {
-		padding-left: 20vw;
-	}
-	
+@media (min-width: 1500px) {
 	.small #latest-blogposts-container,
 	.small #video-reel-container,
 	.small #card-link-container,
 	.small #newsletter-footer-container,
-	.small #actual-footer-container {
-		margin-left: 20vw;
+	.small #prefooter-menu-container {
+		margin-left: 300px;
 	}
-	
-	.small #footer-container {
-		margin-left: 0px;
+
+	.small #prefooter-container {
+		padding-left: 300px;
 	}
-	
-	#carousel-container {
-		display: flex;
-		display: -webkit-flex;
-		flex-flow: row wrap;
-		-webkit-flex-flow: row wrap;
-		justify-content: center;
-		-webkit-justify-content: center;
-		margin: 0px calc(50% - 370px);
+
+	.small #prefooter-menu-container,
+	.small #instagram-feed-container {
+		margin: 0px;
 	}
-	
-	
-	#footer-menu .menu-item {
-		display: list-item;
-	}
-	
-	#prefooter-container {
-		display: flex;
-		display: -webkit-flex;
-		background-color: var(--salmon);
-		justify-content: center;
-		-webkit-justify-content: center;
-	}
-	
-	#prefooter-menu-container {
-		flex: 1 0 100%;
-		max-width: 300px;
-	}
-	
-	#instagram-feed-container {
-		/* margin: auto; */
-		display: block;
-	}
-	
-	#instagram-feed-container .container-header-img {
-		width: 250px;
-	}	
 }
 
 @media (min-width: 1921px) {
@@ -367,7 +270,7 @@
 		font-size: 45px;
 	}
 
-		#body-container {
+	#body-container {
 		background-color: white;
 	}
 
@@ -401,8 +304,6 @@
 		padding-left: 0px!important;
 	}
 
-
-
 	#instagram-feed-container {
 		margin-right: 0px!important;
 		margin-left: 0px!important;
@@ -419,24 +320,5 @@
 
 	.small #actual-footer-container {
 		margin-left: 0px!important;
-	}
-}
-
-@media (min-width: 1500px) {
-	.small #latest-blogposts-container,
-	.small #video-reel-container,
-	.small #card-link-container,
-	.small #newsletter-footer-container,
-	.small #prefooter-menu-container {
-		margin-left: 300px;
-	}
-
-	.small #prefooter-container {
-		padding-left: 300px;
-	}
-
-	.small #prefooter-menu-container,
-	.small #instagram-feed-container {
-		margin: 0px;
 	}
 }

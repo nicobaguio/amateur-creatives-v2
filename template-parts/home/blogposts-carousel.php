@@ -1,5 +1,8 @@
-<?php $latest_blogposts_img = get_field('latest_blogposts_img') ?>
-<div id="latest-blogposts-container">
+<?php
+	$latest_blogposts_img = get_field('latest_blogposts_img');
+	$background_img = get_field('latest_blogposts_bg_img');
+?>
+<div id="latest-blogposts-container" style="background-image: url(<?php echo wp_get_attachment_image_url($background_img, 'full')?>)">
     <?php echo wp_get_attachment_image($latest_blogposts_img, null, false, array('class' => 'container-header-img')) ?>
     <div class="main-carousel" id="carousel-container">
         <?php
@@ -21,7 +24,7 @@
     </div>
     <div id="all-blogposts-container">
         <a id="all-blogposts-link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
-            <h3 id="all-blogposts">check out all the blogposts -></h3>
+            <h3 id="all-blogposts">check out all the blogposts</h3>
         </a>
     </div>
 </div>
