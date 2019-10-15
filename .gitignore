@@ -1,4 +1,5 @@
 *.zip
 acf-*.json
 /node_modules
-package.json
+/bundled
+/dist

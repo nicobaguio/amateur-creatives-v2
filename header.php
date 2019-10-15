@@ -11,11 +11,11 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
     <?php wp_head(); ?>
     <style type="text/css">
         hr {
-            background-image: url("<?php echo get_template_directory_uri() ?>/assets/divider.png")
+            background-image: url("<?php echo get_template_directory_uri() ?>/images/divider.png")
         }
 
         #content ul li {
-            background-image: url("<?php echo get_template_directory_uri() ?>/assets/ul-bullet.png")
+            background-image: url("<?php echo get_template_directory_uri() ?>/images/ul-bullet.png")
         }
 
         #page-loader {

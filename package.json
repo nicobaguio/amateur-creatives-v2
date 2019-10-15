@@ -1,0 +1,44 @@
+{
+  "name": "nico-be-awesome-v2",
+  "version": "1.0.0",
+  "description": "Custom WP theme for Amateur Creatives",
+  "main": "index.js",
+  "scripts": {
+    "serve": "gulp",
+    "build": "gulp build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicobaguio/amateur-creatives-v2.git"
+  },
+  "author": "Nico Baguio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicobaguio/amateur-creatives-v2/issues"
+  },
+  "homepage": "https://github.com/nicobaguio/amateur-creatives-v2#readme",
+  "dependencies": {
+    "flickity": "^2.2.1",
+    "typed.js": "^2.0.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "autoprefixer": "^9.6.5",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-zip": "^5.0.1",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^14.2.0"
+  }
+}
