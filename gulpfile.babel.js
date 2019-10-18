@@ -99,7 +99,8 @@ export const compress = () => {
         .pipe(dest('bundled'))
 }
 
-export const dev = series(clean, parallel(styles, fonts, images, copy, scripts), watchForChanges);
-export const build = series(clean, parallel(styles, fonts, images, copy, scripts), compress);
+export const dev = series(clean, parallel(series(styles, fonts), images, copy, scripts), watchForChanges);
+export const build = series(clean, parallel(series(styles, fonts), images, copy, scripts), compress);
+export const test = series(clean, styles);
 
 export default dev;
