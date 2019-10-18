@@ -27,6 +27,6 @@
     </div>
     <div id="video-title-container">
         <h2 id="video-title"><?php echo $video_post_title ?></h2>
-        <h6><a id="video-link" href="<?php echo $video_post_url?>">Roll the clip!</a></h6>
+        <h6><a id="video-link" href="<?php echo $video_post_url?>">Read the shownotes &rarr;</a></h6>
     </div>
 </div>
