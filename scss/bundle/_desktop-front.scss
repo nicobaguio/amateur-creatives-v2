@@ -119,7 +119,7 @@
 		// background-color: var(--salmon);
 		background-color: var(--lilac-fog);
 		display: flex;
-		display: -webkit-flex;
+		flex-flow: row nowrap!important;
 		margin-top: 0px;
 		max-width: 576px;
 		max-height: 324px;
