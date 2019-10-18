@@ -1,14 +1,15 @@
 @media (min-width: 1024px) {
 	.small #header-container {
-		background-color: var(--lilac-fog);
+		// background-color: var(--lilac-fog);
+		background-color: var(--charcoal);
 		max-width: 300px;
 		width: 20vw;
 		height: auto;
-
 	}
 
 	#header-container {
-		background-color: var(--lilac-fog);
+		// background-color: var(--lilac-fog);
+		background-color: var(--charcoal);
 		height: 100vmin;
 		width: 30vmax;
 		position: fixed;
@@ -115,7 +116,8 @@
 	}
 
 	#header-hero-container {
-		background-color: var(--salmon);
+		// background-color: var(--salmon);
+		background-color: var(--lilac-fog);
 		display: flex;
 		display: -webkit-flex;
 		margin-top: 0px;
