@@ -81,9 +81,11 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
                     <?php get_search_form(); ?>
                 </div>
             </div>
-            <div id="newsletter-header-container" class="newsletter">
-                <?php dynamic_sidebar('newsletter-header') ?>
-            </div>
+            <!-- <div id="newsletter-header-container" class="newsletter">
+                <?php
+                    // dynamic_sidebar('newsletter-header')
+                ?>
+            </div> -->
         </div>
         <div id="header-hero-container">
             <?php dynamic_sidebar('hero-header') ?>
