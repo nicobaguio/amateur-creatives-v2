@@ -21,6 +21,8 @@ let headerTransform = function() {
             body_container.classList.remove('small');
             hamburger.classList.add('is-active');
         }
+    } else {
+        hamburger.classList.remove('is-active');
     }
 };
 

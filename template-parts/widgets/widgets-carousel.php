@@ -3,6 +3,7 @@
     global $post_idx;
     $is_first = $post_idx == 0;
     $desktop_class = $is_first ? "first" : null;
+    $home_class = $is_home ? "home" : null;
 ?>
 <div class="post-container <?php echo "{$post_class} {$desktop_class}"?>">
     <?php
