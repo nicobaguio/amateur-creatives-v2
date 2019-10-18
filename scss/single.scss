@@ -66,6 +66,7 @@
 #content h2,
 #content h3,
 #content h4,
+#content h5,
 #content p {
     margin-left: 15%;
     margin-right: 15%;
@@ -106,6 +107,12 @@
     color: var(--seafoam);
     margin-bottom: 1rem;
     font-weight: 100;
+}
+
+#content h5 {
+    font-family: 'PMNCaecilia', serif;
+    font-style: italic;
+    color: #3a393f;
 }
 
 #content a {
