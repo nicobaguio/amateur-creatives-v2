@@ -198,13 +198,14 @@
 	
 	.small #prefooter-container {
 		padding-left: 20vw;
+		padding-left: 0px;
 	}
 	
 	.small #latest-blogposts-container,
 	.small #video-reel-container,
 	.small #card-link-container,
-	.small #newsletter-footer-container,
-	.small #actual-footer-container {
+	.small #newsletter-footer-container {
+	// .small #actual-footer-container {
 		margin-left: 20vw;
 	}
 	
