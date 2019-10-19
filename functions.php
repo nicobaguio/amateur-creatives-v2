@@ -13,7 +13,7 @@ if ( ! function_exists( 'my_styles' ) ) {
             wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/video-reel.css' );
             wp_enqueue_style( 'home', get_template_directory_uri() . '/css/home.css' );
         };
-        if ( is_singular() ) {
+        if ( is_singular() and ! is_page( 'home' ) ) {
             wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css');
         }
     };    

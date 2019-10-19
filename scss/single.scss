@@ -284,6 +284,13 @@ hr {
     background-position: center center;
 }
 
+#header-hero-container {
+    display: flex;
+    align-items: center;
+    margin: 15px 0px 0px;
+    flex-flow: row nowrap;
+}
+
 @media (min-width: 1024px) {
     #singular-container {
         margin-left: 30vw;
