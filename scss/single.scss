@@ -291,6 +291,21 @@ hr {
     flex-flow: row nowrap;
 }
 
+#video-frame-wrapper {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+    margin: 0px auto;
+}
+
+#video-frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media (min-width: 1024px) {
     #singular-container {
         margin-left: 30vw;
