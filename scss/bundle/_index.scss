@@ -519,6 +519,12 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
     }
 }
 
+#latest-blogposts-container,
+#video-reel-container,
+#newsletter-footer-container {
+    padding: 50px 0px;
+}
+
 /* INDEX PHP STYLES */
 
 #index-container {

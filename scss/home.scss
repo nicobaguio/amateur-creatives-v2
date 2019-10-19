@@ -14,11 +14,19 @@
     margin-right: auto;
 }
 
+.post-container {
+    margin-right: 15px;
+}
+
 @media (min-width: 1024px) {
     #header-hero-container {
         margin: 15px 0px 0px;
         max-width: none;
         flex-flow: row nowrap;
+    }
+    
+    .post-container {
+        margin-right: auto;
     }
 
     .first {

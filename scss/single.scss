@@ -13,7 +13,7 @@
     -webkit-flex-flow: row wrap;
     justify-content: center;
     -webkit-justify-content: center;
-    margin: 30px 15px 5px;
+    margin: 100px 15px 5px;
 }
 
 .category {
@@ -284,15 +284,19 @@ hr {
     background-position: center center;
 }
 
-@media (min-width: 1000px) {
-	.small #singular-container {
-        margin-left: 300px;
-    }
-}
-
 @media (min-width: 1024px) {
     #singular-container {
         margin-left: 30vw;
+    }
+
+    .small #singular-container {
+        margin-left: 20vw;
+    }
+}
+
+@media (min-width: 1500px) {
+	.small #singular-container {
+        margin-left: 300px;
     }
 }
 
