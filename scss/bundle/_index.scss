@@ -398,6 +398,8 @@ input#search-text:-moz-placeholder { /* Firefox 18- */
 
 .card-link img {
     margin: 45px auto 0px;
+    max-width: 65px;
+    height: auto;
 }
 
 #prefooter-menu-container {

@@ -23,7 +23,7 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
             position: fixed;
             top: 0;
             left: -25vw;
-            height: 100vh;
+            height: 150vh;
             width: 150vw;
             z-index: 5;
         }
