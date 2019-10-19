@@ -27,6 +27,7 @@ let headerTransform = function() {
 };
 
 document.addEventListener('DOMContentLoaded', headerTransform, false);
+window.addEventListener('resize', headerTransform, false);
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('is-active');
