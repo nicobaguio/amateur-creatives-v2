@@ -116,10 +116,11 @@
 	}
 
 	#header-hero-container {
-		// background-color: var(--salmon);
 		background-color: var(--lilac-fog);
-		// display: flex;
-		// flex-flow: row nowrap!important;
+		display: flex;
+		align-items: center;
+		margin: 15px 0px 0px;
+		flex-flow: row nowrap;
 		margin-top: 0px;
 		max-width: 576px;
 		max-height: 324px;
