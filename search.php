@@ -8,7 +8,6 @@
 
     $the_query = new WP_Query($args);
 ?>
-<h1 style="font-size: 60px; text-align: center;"><?php echo $the_query->found_posts ?></h1>
 <div id="index-container">
     <h1 class="index-title">Here are the posts related to "<?php echo $search_query ?>"</h1>
     <?php

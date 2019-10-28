@@ -16,6 +16,10 @@ if ( ! function_exists( 'my_styles' ) ) {
         if ( is_singular() and ! is_page( 'home' ) ) {
             wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css');
         }
+
+        if ( is_page('shop') ) {
+            wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
+        }
     };    
 }
 
@@ -388,8 +392,16 @@ function filter_ptags_on_images($content) {
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 };
 
-update_option('siteurl', '192.168.1.9:8080');
-update_option('home', '192.168.1.9:8080');
+function my_theme_wrapper_start() {
+    echo '<div id="app"><h1>This is a sample Lorem Ipsum Lorem Ipsum Lorem Ipsum</h1>';
+}
+
+function my_theme_wrapper_end() {
+    echo '</div>';
+}
+
+// Woo Commerce actions
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
@@ -404,6 +416,7 @@ if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
         add_action('wp_footer','my_scripts');
         add_action('wp_footer','my_styles');
         add_theme_support( 'custom-logo' );
+        add_theme_support( 'woocommerce' );
     }
 }
 
