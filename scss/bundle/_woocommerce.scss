@@ -1,0 +1,57 @@
+@mixin realtime-semibold {
+    font-family: 'Realtime-Semibold', serif;
+}
+
+@mixin charcoal {
+    color: #101318;
+}
+
+@mixin ac-select {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #B6C2F1;
+    min-height: 30px;
+}
+
+#shop-container {
+    margin-top: 15px;
+}
+
+.woocommerce-ordering {
+    height: 50px;
+}
+
+.woocommerce-ordering select {
+    @include realtime-semibold;
+    @include charcoal;
+    @include ac-select;
+    float: right;
+    margin: 15px;
+    text-transform: uppercase;
+}
+
+.products {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px;
+}
+
+.product {
+    list-style: none;
+    width: 300px;
+    margin: 0px auto 15px;
+}
+
+.woocommerce-loop-product_link {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+    #shop-container {
+        margin-left: 30vw;
+    }
+
+    .small #shop-container {
+        margin-left: 20vw;
+    }
+}

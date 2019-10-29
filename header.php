@@ -1,5 +1,6 @@
 <?php 
 $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
+$is_woo = is_woocommerce() || is_cart() || is_checkout();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,14 +53,14 @@ $logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
         }
     </style>
 </head>
-<body id="body-container">
+<body id="body-container" class="<?php echo $is_woo ? 'woocommerce-small' : '' ; ?>">
     <div id="page-loader">
         <div class="animated-gradient"></div>
     </div>
     <header id="header-container">
         <div id="top-container">
             <div id="top-header-container">
-                <button class="hamburger hamburger--elastic is-active" type="button">
+                <button class="hamburger hamburger--elastic is-active <?php echo $is_woo ? 'hidden' : '' ?>" type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>

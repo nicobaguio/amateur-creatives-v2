@@ -79,6 +79,14 @@ if (function_exists('register_sidebar') ) {
             'after_widget' => '</div>',
         ));
 
+        register_sidebar( array(
+            'name' => 'Shop Advertisements',
+            'id' => 'shop-sidebar',
+            'description' => 'Advertisemsents for Shop',
+            'before_widget' => '<div class="shop-advertisement-page">',
+            'after_widget' => '</div>'
+        ));
+
 }}
 
 // Add ACF fields
@@ -375,6 +383,54 @@ if( function_exists('acf_add_local_field_group') ) {
         'active' => true,
         'description' => '',
     ));
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5db73fcf1477c',
+        'title' => 'Shop Fields',
+        'fields' => array(
+            array(
+                'key' => 'field_5db73fd4c22c0',
+                'label' => 'Shop Image',
+                'name' => 'shop_img',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page',
+                    'operator' => '==',
+                    'value' => '973',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
 };
 
 function ac_custom_styling( $atts, $content = null ) {
@@ -392,20 +448,59 @@ function filter_ptags_on_images($content) {
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 };
 
-function my_theme_wrapper_start() {
-    echo '<div id="app"><h1>This is a sample Lorem Ipsum Lorem Ipsum Lorem Ipsum</h1>';
+function remove_br_gallery($output) {
+    return preg_replace('/<br style=(.*)>/mi', '', $output);
 }
 
+// Don't use WooCommerce CSS
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+// Remove Default Content Wrapper
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+// Add Theme Content Wrapper
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+function my_theme_wrapper_start() {
+    echo '<div id="shop-container">';
+}
+
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 function my_theme_wrapper_end() {
     echo '</div>';
 }
 
-// Woo Commerce actions
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+// Remove WooCommerce Breadcrumbs from all WooCommerce pages
+add_action('template_redirect', 'remove_shop_breadcrumbs' );
+function remove_shop_breadcrumbs(){
+    if (is_shop())
+        remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+}
+
+// Remove Defalut Page Title
+add_filter('woocommerce_show_page_title', '__return_false');
+
+// Remove Pagination in shop page
+add_action( 'woocommerce_product_query', 'all_products_query' );
+function all_products_query( $q ){
+    $q->set( 'posts_per_page', -1 );
+}
+
+// Remove Results Count from Shop Page
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove Sidebar
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+// Reposition Sale Flash
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
         add_filter('the_content', 'filter_ptags_on_images');
+        add_filter( 'use_default_gallery_style', '__return_false' );
         add_filter('embed_oembed_html', 'shapeSpace_oembed_html', 99, 4);
         add_image_size( 'card-thumbnail', 500);
         add_shortcode('ac_tag', 'ac_custom_styling');

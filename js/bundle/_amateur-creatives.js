@@ -4,16 +4,21 @@ let body_container = document.querySelector('#body-container');
 let header_links = document.querySelectorAll('#menu-header-container .menu-item a');
 let social_icons = document.querySelectorAll('.social-icon');
 let isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+
+if ( body_container.classList.contains('woocommerce-small') ) {
+    sessionStorage.setItem('headersmall', 'true');
+};
+
 let isHeaderSmall = sessionStorage.getItem('headersmall') ? sessionStorage.getItem('headersmall') == 'true' : false;
 
 let headerTransform = function() {
     // Transform header based on stored session storage
-    console.log('headertransform: is Desktop? ' + isDesktop);
-    console.log('headertransform: is hamburger active? ' + !isHeaderSmall);
-    console.log('headertransform: is Header small? ' + isHeaderSmall);
+    // console.log('headertransform: is Desktop? ' + isDesktop);
+    // console.log('headertransform: is hamburger active? ' + !isHeaderSmall);
+    // console.log('headertransform: is Header small? ' + isHeaderSmall);
 
     if ( isDesktop ) {
-        console.log('Changed!!')
+        // console.log('Changed!!')
         if ( isHeaderSmall ) {
             body_container.classList.add('small');
             hamburger.classList.remove('is-active');
@@ -35,10 +40,10 @@ hamburger.addEventListener('click', function() {
     if ( isDesktop ) {
         isHeaderSmall = !isHeaderSmall;
         sessionStorage.setItem('headersmall', isHeaderSmall);
-        console.log('hamburgerclick: is Desktop? ' + isDesktop);
-        console.log('hamburgerclick: is hamburger active? ' + !isHeaderSmall);
-        console.log('hamburgerclick: is Header small? ' + isHeaderSmall);
-   
+        // console.log('hamburgerclick: is Desktop? ' + isDesktop);
+        // console.log('hamburgerclick: is hamburger active? ' + !isHeaderSmall);
+        // console.log('hamburgerclick: is Header small? ' + isHeaderSmall);
+
         body_container.classList.toggle('small');
     } else {
         body_container.classList.toggle('reveal');

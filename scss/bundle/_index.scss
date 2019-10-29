@@ -13,6 +13,10 @@ a {
     color: black;
 }
 
+.hidden {
+    display: none!important;
+}
+
 #body-container {
     min-height: 100vh;
     max-width: 100vw;
