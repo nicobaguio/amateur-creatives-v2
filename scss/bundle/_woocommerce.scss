@@ -94,6 +94,10 @@
     @include ac-tag(var(--vogue-red), white);
 }
 
+.preorder {
+    @include ac-tag(var(--egg-yolk), var(--charcoal));
+}
+
 .woocommerce-loop-product_link {
     min-width: 100%;
     max-width: 100%;

@@ -526,6 +526,15 @@ function flash_wrapper_end() {
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
 add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 15);
 
+// Add PreOrder Badge
+add_action('woocommerce_before_shop_loop_item_title', 'add_preorder_badge', 15);
+function add_preorder_badge() {
+    global $product;
+    if ($product -> is_on_backorder()) {
+        echo '<span class="preorder">Pre-Order</span>';
+    }
+}
+
 // Remove Add to Cart from Shop Page
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 
