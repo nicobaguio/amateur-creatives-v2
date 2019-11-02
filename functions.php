@@ -486,7 +486,7 @@ function remove_shop_breadcrumbs(){
         remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 }
 
-// Remove Defalut Page Title
+// Remove Default Page Title
 add_filter('woocommerce_show_page_title', '__return_false');
 
 // Remove Pagination in shop page
@@ -500,6 +500,16 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
 // Remove Sidebar
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+// Reduce Sorting options
+add_filter('woocommerce_catalog_orderby', 'ac_catalog_orderby', 20);
+function ac_catalog_orderby( $orderby ) {
+    unset($orderby["menu_order"]);
+    unset($orderby["popularity"]);
+    unset($orderby["rating"]);
+
+    return $orderby;
+}
 
 // Add Flash Wrapper
 add_action('woocommerce_before_shop_loop_item_title', 'flash_wrapper_start', 10);
