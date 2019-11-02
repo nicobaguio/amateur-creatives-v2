@@ -15,7 +15,9 @@ $is_woo = is_woocommerce() || is_cart() || is_checkout();
             background-image: url("<?php echo get_template_directory_uri() ?>/images/divider.png")
         }
 
-        #content ul li {
+        #content ul li,
+        #shop-container ul li,
+        #product-container ul li {
             background-image: url("<?php echo get_template_directory_uri() ?>/images/ul-bullet.png")
         }
 

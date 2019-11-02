@@ -462,7 +462,13 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 // Add Theme Content Wrapper
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 function my_theme_wrapper_start() {
-    echo '<div id="shop-container">';
+    if ( is_shop() ) {
+        echo '<div id="shop-container">';
+    }
+
+    if ( is_product() ) {
+        echo '<div id="product-container">';
+    }
 }
 
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
@@ -475,14 +481,16 @@ add_action('woocommerce_before_main_content', 'add_container_header_img', 12);
 function add_container_header_img() {
     $id = get_option( 'woocommerce_shop_page_id' );
     $product_archive_header_img = get_field('shop_img', $id);
-    
-    echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
+
+    if ( is_shop() ) {
+        echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
+    }
 }
 
 // Remove WooCommerce Breadcrumbs from all WooCommerce pages
 add_action('template_redirect', 'remove_shop_breadcrumbs' );
 function remove_shop_breadcrumbs(){
-    if (is_shop())
+    if (is_shop() || is_product() )
         remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 }
 
@@ -517,10 +525,8 @@ function flash_wrapper_start() {
     echo '<div id="flash-container">';
 }
 
-add_action('woocommerce_before_shop_loop_item_title', 'flash_wrapper_end', 20);
-function flash_wrapper_end() {
-    echo '</div>';
-}
+add_action('woocommerce_before_shop_loop_item_title', 'my_theme_wrapper_end', 20);
+
 
 // Reposition Sale Flash
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
@@ -547,6 +553,41 @@ function out_of_stock_wrapper() {
 
 // Remove Add to Cart from Shop Page
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+// Add container for Images in Single Product Page
+add_action('woocommerce_before_single_product_summary', 'single_product_img_wrapper', 15);
+add_action('woocommerce_before_single_product_summary', 'my_theme_wrapper_end', 25);
+function single_product_img_wrapper() {
+    echo '<div class="product-img-gallery">';
+}
+
+// Remove Related content
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+// Remove Product Meta
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+// Remove Product Tabs
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+// Add Back to All Products Button
+add_action('woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 10);
+add_action('woocommerce_after_single_product_summary', 'add_back_to_products', 15);
+
+function add_back_to_products() {
+    echo '<a class="back-to-products" href="/shop">&larr; Back to All Products</a>';
+}
+
+// Add + & - buttons to Quantity Input
+add_action('woocommerce_before_quantity_input_field', 'quantity_minus' );
+function quantity_minus() {
+    echo '<button type="button" class="minus quantity-increment">-</button>';
+}
+
+add_action( 'woocommerce_after_quantity_input_field', 'quantity_plus' );
+function quantity_plus() {
+    echo '<button type="button" class="plus quantity-increment">+</button>';
+}
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {

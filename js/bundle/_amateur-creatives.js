@@ -77,3 +77,31 @@ social_icons.forEach(function(icon) {
     icon.addEventListener('mouseenter', hovered);
     icon.addEventListener('mouseleave', hovered);
 })
+
+// + - buttons for Shop
+btns = document.querySelectorAll('.quantity-increment');
+
+
+let quantity_button_press = function(btn) {
+    ipts = document.querySelectorAll('.qty');
+
+    ipts.forEach(function(ipt) {
+        let old_value = ipt.value;
+        let new_value;
+        if ( btn.srcElement.classList.contains('plus') ) {
+            new_value = parseFloat(old_value) + 1;
+        } else {
+            if (old_value > 0) {
+                new_value = parseFloat(old_value) - 1;
+            } else {
+                new_value = 0
+            }
+        }
+
+        ipt.value = new_value;
+    })
+}
+
+btns.forEach(function(btn) {
+    btn.addEventListener('click', quantity_button_press);
+})
