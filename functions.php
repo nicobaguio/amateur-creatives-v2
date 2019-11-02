@@ -570,8 +570,15 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 // Remove Product Tabs
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 
-// Add Back to All Products Button
+// Add to Cart at the end of a file
+add_action('woocommerce_after_single_product_summary', 'second_cart_container', 5);
 add_action('woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 10);
+add_action('woocommerce_after_single_product_summary', 'my_theme_wrapper_end', 15);
+function second_cart_container() {
+    echo '<div class="bottom-add-cart-container">';
+}
+
+// Add Back to All Products Button
 add_action('woocommerce_after_single_product_summary', 'add_back_to_products', 15);
 
 function add_back_to_products() {
