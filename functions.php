@@ -470,6 +470,15 @@ function my_theme_wrapper_end() {
     echo '</div>';
 }
 
+// Add ACF container header image
+add_action('woocommerce_before_main_content', 'add_container_header_img', 12);
+function add_container_header_img() {
+    $id = get_option( 'woocommerce_shop_page_id' );
+    $product_archive_header_img = get_field('shop_img', $id);
+    
+    echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
+}
+
 // Remove WooCommerce Breadcrumbs from all WooCommerce pages
 add_action('template_redirect', 'remove_shop_breadcrumbs' );
 function remove_shop_breadcrumbs(){
@@ -492,10 +501,23 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 // Remove Sidebar
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
+// Add Flash Wrapper
+add_action('woocommerce_before_shop_loop_item_title', 'flash_wrapper_start', 10);
+function flash_wrapper_start() {
+    echo '<div id="flash-container">';
+}
+
+add_action('woocommerce_before_shop_loop_item_title', 'flash_wrapper_end', 20);
+function flash_wrapper_end() {
+    echo '</div>';
+}
+
 // Reposition Sale Flash
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
-add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 15);
 
+// Remove Add to Cart from Shop Page
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {

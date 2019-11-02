@@ -1,5 +1,16 @@
-@mixin realtime-semibold {
+@mixin realtime-semibold($font_size: 15px) {
+    // Inconsolata!!
     font-family: 'Realtime-Semibold', serif;
+    font-size: $font_size;
+}
+
+@mixin caecilia($italic, $font_size: 15px) {
+    @if $italic {
+        font-family: 'CaeciliaLTStd-Italic', sans-serif;
+    } @else {
+        font-family: 'CaeciliaLTPro-55Roman', sans-serif;
+    }
+    font-size: $font_size;
 }
 
 @mixin charcoal {
@@ -10,6 +21,35 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #B6C2F1;
     min-height: 30px;
+}
+
+@mixin ac-tag($bg_color, $font_color) {
+    margin: 0px auto 5px;
+    display: inline;
+    @include realtime-semibold;
+    background-color: $bg_color;
+    color: $font_color;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 10px;
+}
+
+@mixin ac-button {
+    @include realtime-semibold;
+    letter-spacing: 3px;
+    border: 1px var(--lilac-fog) solid;
+    background-size: 300% auto;
+    background-position: 100%;
+    background-image: linear-gradient(to left, white 0%, white 40%, var(--egg-yolk) 50%, var(--lilac-fog) 100%);
+    transition: background-position 0.5s;
+    padding: 5px 15px;
+    display: inline-block;
+
+    &:hover {
+        background-position: 0%;
+        color: white;
+    }
 }
 
 #shop-container {
@@ -38,12 +78,60 @@
 .product {
     list-style: none;
     width: 300px;
-    margin: 0px auto 15px;
+    margin: 0px auto 25px;
+}
+
+.product img {
+    margin-bottom: 10px;
+}
+
+#flash-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.onsale {
+    @include ac-tag(var(--vogue-red), white);
 }
 
 .woocommerce-loop-product_link {
     min-width: 100%;
     max-width: 100%;
+}
+
+.woocommerce-loop-product__title {
+    @include realtime-semibold;
+    font-size: 25px;
+    text-align: center;
+    margin: 0px;
+}
+
+.price {
+    display: flex;
+    flex-flow: row wrap;
+    @include realtime-semibold;
+    justify-content: center;
+}
+
+.price > del, .price > ins, .price > span {
+    margin-right: 5px;
+}
+
+.price del {
+    color: #B6C2F1;
+}
+
+.sale .price ins {
+    color: var(--vogue-red);
+    text-decoration: none;
+}
+
+.product .button {
+    @include ac-button;
+}
+
+.added_to_cart {
+    display: none;
 }
 
 @media (min-width: 1024px) {
