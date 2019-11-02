@@ -573,7 +573,7 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_pr
 // Add to Cart at the end of a file
 add_action('woocommerce_after_single_product_summary', 'second_cart_container', 5);
 add_action('woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 10);
-add_action('woocommerce_after_single_product_summary', 'my_theme_wrapper_end', 15);
+add_action('woocommerce_after_single_product_summary', 'my_theme_wrapper_end', 20);
 function second_cart_container() {
     echo '<div class="bottom-add-cart-container">';
 }
@@ -596,6 +596,9 @@ function quantity_plus() {
     echo '<button type="button" class="plus quantity-increment">+</button>';
 }
 
+// Move Cart to before excerpt in single product page
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 15);
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
         add_filter('the_content', 'filter_ptags_on_images');

@@ -180,6 +180,7 @@ input[type=number]::-webkit-outer-spin-button {
     @include realtime-semibold(15px);
     border: none;
     text-align: center;
+    max-width: 30px;
 }
 
 .quantity-container {
@@ -223,6 +224,7 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex;
         flex-flow: row wrap;
         padding: 0px 20px;
+        margin-top: 20px;
     }
 
     .product-img-gallery,
@@ -313,7 +315,24 @@ input[type=number]::-webkit-outer-spin-button {
         margin-left: 20vw;
     }
 
-    .bottom-add-cart-container {
-        display: none;
+    #product-container {
+        .product-img-gallery,
+        .summary {
+            flex-basis: 50%;
+            min-width: 0%;
+        }
+        
+        .summary {
+            order: 0;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: sticky;
+            align-self: flex-start;
+            top: 0;
+        }
+
+        .bottom-add-cart-container {
+            display: none;
+        }
     }
 }
