@@ -531,7 +531,17 @@ add_action('woocommerce_before_shop_loop_item_title', 'add_preorder_badge', 15);
 function add_preorder_badge() {
     global $product;
     if ($product -> is_on_backorder()) {
-        echo '<span class="preorder">Pre-Order</span>';
+        echo '<span class="preorder">' . _('Pre-Order', 'woocommerce') . '</span>';
+    }
+}
+
+// Add Out-of-Stock Container
+add_action('woocommerce_before_shop_loop_item_title', 'out_of_stock_wrapper', 9);
+function out_of_stock_wrapper() {
+    global $product;
+
+    if (!$product -> is_in_stock()) {
+        echo '<div class="out"><span>' . _('SOLD OUT!', 'woocommerce') . '</span></div>';
     }
 }
 
