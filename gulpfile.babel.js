@@ -37,7 +37,7 @@ export const images = () => {
 }
 
 export const copy = () => {
-    return src(['*.php', 'template-parts/**/*.php', 'style.css', 'webfonts/**/*'], { base: '.'} )
+    return src(['*.php', 'template-parts/**/*.php', 'woocommerce/**/*.php', 'style.css', 'webfonts/**/*'], { base: '.'} )
     .pipe(gulpif(PRODUCTION, dest('dist')))
 }
 
