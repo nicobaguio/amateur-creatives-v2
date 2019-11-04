@@ -9,16 +9,12 @@ if ( ! function_exists( 'my_scripts' ) ) {
 if ( ! function_exists( 'my_styles' ) ) {
     function my_styles() {
         wp_enqueue_style( 'bundle', get_template_directory_uri() . '/css/bundle.css');
-        if ( is_front_page() or is_page('home') ) {
+        if ( is_front_page() || is_page('home') ) {
             wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/video-reel.css' );
             wp_enqueue_style( 'home', get_template_directory_uri() . '/css/home.css' );
         };
-        if ( is_singular() and ! is_page( 'home' ) ) {
+        if ( is_singular() && ! is_page( 'home' ) && !is_cart() ) {
             wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css');
-        }
-
-        if ( is_page('shop') ) {
-            wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce.css' );
         }
     };    
 }
@@ -26,8 +22,16 @@ if ( ! function_exists( 'my_styles' ) ) {
 if ( ! function_exists( 'vendor_styles' ) ) {
     function vendor_styles() {
         wp_enqueue_style( 'flickity-css', 'https://unpkg.com/flickity@2/dist/flickity.min.css', array(), null, '(max-width: 1023px)');
+        // wp_enqueue_style( 'base-choice-css', 'https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/base.min.css', array(), null, null );
+        // wp_enqueue_style( 'choice-css', 'https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css', array(), null, null );
     }
 }
+
+// if ( ! function_exists( 'vendor_scripts' ) ) {
+//     function vendor_scripts() {
+//         wp_enqueue_script( 'choice-js', 'https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js', array(), null, true );
+//     }
+// }
 
 if ( function_exists( 'register_nav_menus' ) ) {
 	function ac_nav_menus() {
@@ -35,7 +39,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 			array(
                 'header-menu' => 'Header Menu',
                 'footer-menu' => 'Footer Menu'
-	    	)
+            )
         );
 }}
 
@@ -386,11 +390,11 @@ if( function_exists('acf_add_local_field_group') ) {
 
     acf_add_local_field_group(array(
         'key' => 'group_5db73fcf1477c',
-        'title' => 'Shop Fields',
+        'title' => 'WooCommerce Fields',
         'fields' => array(
             array(
                 'key' => 'field_5db73fd4c22c0',
-                'label' => 'Shop Image',
+                'label' => 'Header Image',
                 'name' => 'shop_img',
                 'type' => 'image',
                 'instructions' => '',
@@ -421,6 +425,13 @@ if( function_exists('acf_add_local_field_group') ) {
                     'value' => '973',
                 ),
             ),
+            array(
+                array(
+                    'param' => 'page',
+                    'operator' => '==',
+                    'value' => '1073',
+                ),
+        ),
         ),
         'menu_order' => 0,
         'position' => 'normal',
@@ -464,9 +475,7 @@ add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 function my_theme_wrapper_start() {
     if ( is_shop() ) {
         echo '<div id="shop-container">';
-    }
-
-    if ( is_product() ) {
+    } elseif ( is_product() ) {
         echo '<div id="product-container">';
     }
 }
@@ -476,9 +485,9 @@ function my_theme_wrapper_end() {
     echo '</div>';
 }
 
-// Add ACF container header image
-add_action('woocommerce_before_main_content', 'add_container_header_img', 12);
-function add_container_header_img() {
+// Add ACF container header image for Shop
+add_action('woocommerce_before_main_content', 'add_container_header_img_shop', 12);
+function add_container_header_img_shop() {
     $id = get_option( 'woocommerce_shop_page_id' );
     $product_archive_header_img = get_field('shop_img', $id);
 
@@ -586,51 +595,89 @@ function add_back_to_products() {
 }
 
 // Add + & - buttons to Quantity Input
-add_action('woocommerce_before_quantity_input_field', 'quantity_minus' );
-function quantity_minus() {
-    echo '<button type="button" class="minus quantity-increment">-</button>';
-}
+// add_action('woocommerce_before_quantity_input_field', 'quantity_minus' );
+// function quantity_minus() {
+//     echo '<button type="button" class="minus quantity-increment">-</button>';
+// }
 
-add_action( 'woocommerce_after_quantity_input_field', 'quantity_plus' );
-function quantity_plus() {
-    echo '<button type="button" class="plus quantity-increment">+</button>';
-}
+// add_action( 'woocommerce_after_quantity_input_field', 'quantity_plus' );
+// function quantity_plus() {
+//     echo '<button type="button" class="plus quantity-increment">+</button>';
+// }
 
-add_action('get_footer', 'single_page_button_js');
-function single_page_button_js() {
-    if ( is_product() ) {
-        echo "
-            <script>
-                btns = document.querySelectorAll('.quantity-increment');
+// add_action('get_footer', 'single_page_button_js');
+// function single_page_button_js() {
+//     if ( is_product() ) {
+//         echo "
+//             <script>
+//                 btns = document.querySelectorAll('.quantity-increment');
 
 
-                let quantity_button_press = function(btn) {
-                    ipts = document.querySelectorAll('.qty');
+//                 let quantity_button_press = function(btn) {
+//                     ipts = document.querySelectorAll('.qty');
 
-                    ipts.forEach(function(ipt) {
-                        let old_value = ipt.value;
-                        let new_value;
-                        if ( btn.srcElement.classList.contains('plus') ) {
-                            new_value = parseFloat(old_value) + 1;
-                        } else {
-                            if (old_value > 0) {
-                                new_value = parseFloat(old_value) - 1;
-                            } else {
-                                new_value = 0
-                            }
-                        }
+//                     ipts.forEach(function(ipt) {
+//                         let old_value = ipt.value;
+//                         let new_value;
+//                         if ( btn.srcElement.classList.contains('plus') ) {
+//                             new_value = parseFloat(old_value) + 1;
+//                         } else {
+//                             if (old_value > 0) {
+//                                 new_value = parseFloat(old_value) - 1;
+//                             } else {
+//                                 new_value = 0
+//                             }
+//                         }
 
-                        ipt.value = new_value;
-                    })
-                }
+//                         ipt.value = new_value;
+//                     })
+//                 }
 
-                btns.forEach(function(btn) {
-                    btn.addEventListener('click', quantity_button_press);
-                })
-            </script>
-        ";
-    }
-}
+//                 btns.forEach(function(btn) {
+//                     btn.addEventListener('click', quantity_button_press);
+//                 })
+//             </script>
+//         ";
+//     }
+// }
+
+// add_action('get_footer', 'cart_page_button_js');
+// function cart_page_button_js() {
+//     if ( is_cart() ) {
+//         echo '
+//             <script type="text/javascript">
+//                 console.log("This is loaded...");
+//                 qtys = document.querySelectorAll(".quantity");
+
+//                 let quantity_button_press = function(clk) {
+//                     ipt_id = clk.path[1].getElementsByClassName("qty")[0].id;
+//                     update_cart = document.getElementsByName("update_cart")[0];
+//                     ipt = document.getElementById(ipt_id);
+//                     let old_value = ipt.value;
+//                     let new_value;
+//                     if ( clk.srcElement.classList.contains("plus") ) {
+//                         new_value = parseFloat(old_value) + 1;
+//                         update_cart.disabled = false;
+//                     } else {
+//                         if ( old_value > 0 ) {
+//                             new_value = parseFloat(old_value) - 1;
+//                             update_cart.disabled = false;
+//                         } else {
+//                             new_value = 0;
+//                             update_cart.disabled = true;
+//                         }
+//                     }
+//                     ipt.value = new_value;
+//                 }
+                
+//                 qtys.forEach(function(qty) {
+//                     qty.addEventListener("click", quantity_button_press);
+//                 })
+//             </script>
+//         ';
+//     }
+// }
+
 // Move Cart to before excerpt in single product page
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 add_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 15);
@@ -641,6 +688,16 @@ function notice_wrapper() {
     echo '<div class="notice-wrapper">';
 }
 
+// Add ACF container header image for Cart
+add_action('woocommerce_before_cart', 'add_container_header_img_cart', 12);
+function add_container_header_img_cart() {
+    $id = get_option( 'woocommerce_cart_page_id' );
+    $product_archive_header_img = get_field('shop_img', $id);
+
+    if ( is_cart() ) {
+        echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
+    }
+}
 
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {

@@ -53,6 +53,12 @@ $is_woo = is_woocommerce() || is_cart() || is_checkout();
             0%   { background-position: 0 0; }
             100% { background-position: -200% 0; }
         }
+
+        .select2-results__options {
+            font-size: 15px;
+            font-family: 'Realtime-Semibold', serif;
+            text-align: center;
+        }
     </style>
 </head>
 <body id="body-container" class="<?php echo $is_woo ? 'woocommerce-small' : '' ; ?>">
