@@ -98,12 +98,14 @@
 
 #shop-container .product {
     list-style: none;
-    width: 300px;
+    width: 150px;
     margin: 0px auto 25px;
     position: relative;
 }
 
 .product img {
+    width: 150px;
+    height: auto;
     margin-bottom: 10px;
 }
 
@@ -122,14 +124,15 @@
 
 .out {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background-color: var(--salmon);
     opacity: 75%;
 }
 
 .out span {
     position: absolute;
+    text-align: center;
     margin: 0;
     top: 50%;
     left: 50%;
@@ -563,6 +566,19 @@
 
     .woocommerce-small #top-header-container {
         background-color: var(--lilac-fog);
+    }
+
+    #shop-container .product {
+        width: 300px;
+    }
+    
+    .product img {
+        width: 300px;
+    }
+
+    .out {
+        width: 300px;
+        height: 300px;
     }
 
     #product-container {
