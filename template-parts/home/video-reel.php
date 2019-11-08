@@ -12,7 +12,8 @@
             $video_post_title = $video_post[0] -> post_title;
             $video_post_url = get_permalink($video_post[0]);
             $embed = get_field('video_embed', $video_post_id);
-            $embed_str = 'https://www.youtube.com/embed/' . end(explode('=', $embed))
+            $explode_embed = explode('=', $embed);
+            $embed_str = 'https://www.youtube.com/embed/' . end($explode_embed);
         ?>
         <div id="video-frame-wrapper">
         <iframe

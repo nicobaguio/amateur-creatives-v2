@@ -1,6 +1,7 @@
 <?php
     $post_class = has_tag(array('patreon', 'Patreon')) ? "is-patreon" : null;
     global $post_idx;
+    global $is_first;
     $is_first = $post_idx == 0;
     $desktop_class = $is_first ? "first" : null;
 ?>

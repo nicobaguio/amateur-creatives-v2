@@ -537,7 +537,7 @@ function flash_wrapper_start() {
 add_action('woocommerce_before_shop_loop_item_title', 'my_theme_wrapper_end', 20);
 
 
-// Reposition Sale Flash
+// Reposition Sale Flash in Shop Page
 remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
 add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 15);
 
@@ -556,7 +556,7 @@ function out_of_stock_wrapper() {
     global $product;
 
     if (!$product -> is_in_stock()) {
-        echo '<div class="out"><span>' . _('SOLD OUT!', 'woocommerce') . '</span></div>';
+        echo '<div class="out"><span>' . __('SOLD OUT!', 'woocommerce') . '</span></div>';
     }
 }
 
@@ -569,6 +569,15 @@ add_action('woocommerce_before_single_product_summary', 'my_theme_wrapper_end', 
 function single_product_img_wrapper() {
     echo '<div class="product-img-gallery">';
 }
+
+// Reposition Sale Flash in Product Page
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
+add_action('woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 2);
+
+// Add Flash Wrapper in Product Page
+// Add Flash Wrapper
+add_action('woocommerce_single_product_summary', 'flash_wrapper_start', 1);
+add_action('woocommerce_single_product_summary', 'my_theme_wrapper_end', 3);
 
 // Remove Related content
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

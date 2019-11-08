@@ -1,5 +1,4 @@
 <?php 
-$logo = wp_get_attachment_image_src( $custom_logo_id, 'full');
 $is_woo = is_woocommerce() || is_cart() || is_checkout();
 ?>
 <!DOCTYPE html>

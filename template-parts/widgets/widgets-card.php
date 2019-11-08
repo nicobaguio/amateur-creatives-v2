@@ -1,5 +1,6 @@
 <?php
     $post_class = has_tag(array('patreon', 'Patreon')) ? "is-patreon" : null;
+    global $is_first;
 ?>
 <div class="post-container <?php echo "{$post_class}"?>">
     <?php
