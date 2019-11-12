@@ -708,6 +708,15 @@ function add_container_header_img_cart() {
     }
 }
 
+// WooCommerce Checkout Fields Hook
+add_filter( 'woocommerce_default_address_fields' , 'remove_address_placeholders' );
+function remove_address_placeholders( $address_fields ) {
+    $address_fields['address_1']['placeholder'] = '';
+    $address_fields['address_2']['placeholder'] = '';
+    $address_fields['state']['placeholder'] = ' ';
+return $address_fields;
+}
+
 if ( ! function_exists( 'nico_be_awesome_setup' ) ) {
     function nico_be_awesome_setup() {
         add_filter('the_content', 'filter_ptags_on_images');

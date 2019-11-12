@@ -2,13 +2,20 @@
 <?php
     $categories = get_the_category();
     $is_video = has_tag('video');
+    if ( is_cart() ) {
+        $page_id = 'cart';
+    } elseif ( is_checkout() ) {
+        $page_id = 'checkout';
+    } else {
+        $page_id = 'singular';
+    }
 ?>
 <?php
     while ( have_posts() ):
         the_post();
 ?>
-    <div id="<?php echo is_cart() ? 'cart' : 'singular' ?>-container">
-        <?php if ( !is_cart() ): ?>
+    <div id="<?php echo $page_id ?>-container">
+        <?php if ( !is_cart() && !is_checkout() ): ?>
             <div id="post-header">
                 <div class="category-container">
                         <?php

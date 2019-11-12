@@ -53,10 +53,15 @@ $is_woo = is_woocommerce() || is_cart() || is_checkout();
             100% { background-position: -200% 0; }
         }
 
-        .select2-results__options {
+        .select2-results__options,
+        .select2-selection__rendered {
             font-size: 15px;
             font-family: 'Realtime-Semibold', serif;
             text-align: center;
+        }
+
+        .select2-container--default .select2-selection--single {
+            border: 1px var(--salmon) solid;
         }
     </style>
 </head>
