@@ -55,6 +55,13 @@
     box-shadow: 0 $box 0 0 var(--egg-yolk) inset!important;
 }
 
+#shop-container .container-header-img,
+#product-container .container-header-img,
+#cart-container .container-header-img,
+#checkout-container  .container-header-img {
+    margin-top: 50px;
+}
+
 #body-container {
     background-color: white;
 }
@@ -251,6 +258,17 @@
 //     color: var(--vogue-red);
 // }
 
+.woocommerce-form-coupon {
+    @include realtime-semibold(15px);
+    max-width: 300px;
+    display: block;
+    margin: 0px auto;
+}
+
+.woocommerce-NoticeGroup {
+    width: 100%;
+}
+
 .woocommerce-notices-wrapper,
 .woocommerce-form-coupon-toggle {
     background-color: var(--egg-yolk);
@@ -265,6 +283,7 @@
         list-style: none;
         margin: 0;
         padding: 15px;
+        color: var(--charcoal);
 
         li {
             background-image: none!important;
@@ -283,7 +302,7 @@
         display: flex;
         flex-flow: row wrap;
         padding: 0px 20px;
-        // margin-top: 20px;
+        margin-bottom: 50px;
     }
 
     .product-img-gallery,
@@ -561,13 +580,26 @@
     .woocommerce-checkout {
         display: flex;
         flex-flow: row wrap;
+        background-color: #FCFCFC;
+    }
+
+    .woocommerce > ul.woocommerce-error,
+    .woocommerce-NoticeGroup > ul.woocommerce-error {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            background-image: none;
+            text-align: center;
+            @include realtime-semibold(15px);
+            color: red;
+        }
     }
 
     #customer_details, #order_review {
         flex: 1 0 40%;
         margin: 15px;
         padding: 15px;
-        border: 1px var(--vogue-red) dotted;
     }
 
     h3#ship-to-different-address {
@@ -625,7 +657,7 @@
     .input-text {
         @include realtime-semibold(15px);
         border: 1px var(--salmon) solid;
-        text-align: center;
+        text-align: left;
         padding: 5px;
         width: 100%;
     }
@@ -656,6 +688,10 @@
         padding: 5px 10px;
         text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    th.product-name {
+        text-align: left;
     }
 
     .cart_item td {
@@ -699,6 +735,11 @@
             padding: 0px!important;
             font-size: 12px!important;
         }
+    }
+
+    .woocommerce-shipping-totals th,
+    .woocommerce-shipping-totals td {
+        padding-bottom: 15px;
     }
 
     .order-total th,

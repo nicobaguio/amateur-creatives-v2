@@ -57,7 +57,7 @@ $is_woo = is_woocommerce() || is_cart() || is_checkout();
         .select2-selection__rendered {
             font-size: 15px;
             font-family: 'Realtime-Semibold', serif;
-            text-align: center;
+            text-align: left;
         }
 
         .select2-container--default .select2-selection--single {

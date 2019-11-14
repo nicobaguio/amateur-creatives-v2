@@ -13,7 +13,7 @@ if ( ! function_exists( 'my_styles' ) ) {
             wp_enqueue_style( 'video-reel', get_template_directory_uri() . '/css/video-reel.css' );
             wp_enqueue_style( 'home', get_template_directory_uri() . '/css/home.css' );
         };
-        if ( is_singular() && ! is_page( 'home' ) && !is_cart() ) {
+        if ( is_singular() && ! is_page( 'home' ) && !is_cart() & !(is_checkout())) {
             wp_enqueue_style( 'single', get_template_directory_uri() . '/css/single.css');
         }
     };    
@@ -489,11 +489,8 @@ function my_theme_wrapper_end() {
 add_action('woocommerce_before_main_content', 'add_container_header_img_shop', 12);
 function add_container_header_img_shop() {
     $id = get_option( 'woocommerce_shop_page_id' );
-    $product_archive_header_img = get_field('shop_img', $id);
-
-    if ( is_shop() ) {
-        echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
-    }
+    
+	echo get_the_post_thumbnail($id, null, array('class' => 'container-header-img'));
 }
 
 // Remove WooCommerce Breadcrumbs from all WooCommerce pages
@@ -698,15 +695,8 @@ function notice_wrapper() {
 }
 
 // Add ACF container header image for Cart
-add_action('woocommerce_before_cart', 'add_container_header_img_cart', 12);
-function add_container_header_img_cart() {
-    $id = get_option( 'woocommerce_cart_page_id' );
-    $product_archive_header_img = get_field('shop_img', $id);
-
-    if ( is_cart() ) {
-        echo wp_get_attachment_image($product_archive_header_img, null, false, array('class' => 'container-header-img'));
-    }
-}
+add_action('woocommerce_before_cart', 'add_container_header_img_shop', 12);
+add_action('woocommerce_before_checkout_form', 'add_container_header_img_shop', 12);
 
 // WooCommerce Checkout Fields Hook
 add_filter( 'woocommerce_default_address_fields' , 'remove_address_placeholders' );
