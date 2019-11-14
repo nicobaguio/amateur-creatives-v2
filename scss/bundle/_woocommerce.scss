@@ -245,6 +245,11 @@
 // .quantity-increment:focus {
 //     outline: none;
 // }
+// .woocommerce-message {
+//     @include caecilia(true, 15px);
+//     text-align: center;
+//     color: var(--vogue-red);
+// }
 
 .woocommerce-notices-wrapper,
 .woocommerce-form-coupon-toggle {
@@ -267,16 +272,10 @@
             margin: 0;
         }
 
-        .wc-forward {
-            display: none;
-        }
+        // .wc-forward {
+        //     display: none;
+        // }
     }
-}
-
-.woocommerce-message {
-    @include caecilia(true, 15px);
-    text-align: center;
-    color: var(--vogue-red);
 }
 
 #product-container {
@@ -586,13 +585,42 @@
     }
 
     .woocommerce-billing-fields h3,
-    #order_review_heading {
+    #order_review_heading,
+    #payment h3 {
         @include caecilia(true, 25px);
         text-align: center;
         letter-spacing: 4px;
         text-transform: lowercase;
         font-weight: 100;
     }
+
+    #payment {
+        h3 {
+            font-size: 15px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        .wc_payment_methods {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wc_payment_methods li {
+            background-image: none;
+        }
+
+        .wc_payment_method label {
+            font-size: 20px;
+        }
+
+        .payment_box p {
+            @include realtime-semibold(12px);
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+    }
+
 
     .input-text {
         @include realtime-semibold(15px);
