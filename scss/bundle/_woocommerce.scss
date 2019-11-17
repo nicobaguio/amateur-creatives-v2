@@ -55,6 +55,15 @@
     box-shadow: 0 $box 0 0 var(--egg-yolk) inset!important;
 }
 
+.woocommerce {
+    padding-top: 15px;
+}
+
+.return-to-shop {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
 #shop-container .container-header-img,
 #product-container .container-header-img,
 #cart-container .container-header-img,
@@ -574,6 +583,11 @@
             @include highlighted(-5px);
         }
     }
+    
+    .cart-empty {
+        text-align: center;
+        @include realtime-semibold(25px);
+    }
 }
 
 #checkout-container {
@@ -636,6 +650,7 @@
         .wc_payment_methods {
             margin: 0;
             padding: 0;
+            list-style: none;
         }
 
         .wc_payment_methods li {
@@ -771,6 +786,7 @@
     .woocommerce-order {
         max-width: 500px;
         margin: 0 auto 50px;
+        padding: 5px 15px;
 
         .woocommerce-thankyou-order-received {
             text-align: center;
