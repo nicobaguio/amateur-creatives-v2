@@ -64,6 +64,102 @@
     text-align: center;
 }
 
+.woocommerce-small.reveal .logo {
+    background-color: var(--salmon);
+}
+
+.woocommerce-small {
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+        background-color: var(--charcoal);
+    }
+
+    #page-overlay {
+        background-color: var(--salmon);
+    }
+
+    #menu-header-container {
+        display: none;
+    }
+
+    #shop-sidebar-container {
+        margin-top: 100px;
+        @include caecilia(true, 3em);
+        font-weight: normal;
+        font-style: normal;
+        text-transform: lowercase;
+        letter-spacing: 3px;
+        // max-height: calc(100vh - 305px);
+        // overflow: scroll;
+    }
+
+    .menu-container {
+        list-style: none;
+        padding: 15px 0px;
+        margin: 0;
+    }
+
+    #product-sidebar-menu {
+        border-top: 1px var(--vogue-red) dashed;
+        border-bottom: 1px var(--vogue-red) dashed;
+    }
+
+    .menu-item a {
+        color: black;
+
+        &:focus {
+            border-bottom: 2px white solid;
+        }
+    }
+
+    #shop-bottom-sidebar-menu {
+        font-size: 0.7em;
+        text-align: center;
+        padding-bottom: 0px;
+
+        .menu-item {
+            display: inline;
+            margin-right: 10px;
+            @include realtime-semibold(15px);
+            letter-spacing: 1px;
+        }
+    }
+
+    .cart-logo-container {
+        text-align: center;
+
+        .cart-link {
+            @include ac-button(black, to left, white 0%, white 40%, var(--vogue-red) 50%);
+            border: 2px var(--vogue-red) solid;
+            margin: 0px auto 25px;
+            text-transform: uppercase;    
+        }
+    }
+
+    .shipping-from {
+        @include realtime-semibold(15px);
+        text-transform: lowercase;
+        letter-spacing: 1px;
+        color: var(--vogue-red);
+        text-align: center;
+        margin: 0px 0px 25px;
+    }
+
+    #search-form-container {
+        margin-bottom: 25px;
+    }
+
+    .homepage-link {
+        @include ac-button(white, to left, white 0%, white 40%, var(--egg-yolk) 50%, var(--lilac-fog) 100%);
+        border: 1px var(--lilac-fog) solid;
+        margin: 0px auto 25px;
+        text-transform: lowercase;
+        display: block;
+        text-align: center;
+    }
+}
+
 #shop-container .container-header-img,
 #product-container .container-header-img,
 #cart-container .container-header-img,

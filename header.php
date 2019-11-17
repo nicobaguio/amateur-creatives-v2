@@ -85,14 +85,49 @@ $is_woo = is_woocommerce() || is_cart() || is_checkout();
         <div id="middle-container">
             <div id="page-overlay">
                 <?php wp_nav_menu( array (
-                    'menu' => 'header-menu',
+                    'theme_location' => 'header-menu',
                     'container_id' => 'menu-header-container',
                     'container_class' => "menu-container",
-                    'menu_id' => 'header-menu'
+                    'menu_id' => 'header-menu',
+
                 ) ) ?>
+                <?php if ($is_woo): ?>
+                    <div id="shop-sidebar-container">
+                        <div class="cart-logo-container">
+                            <a href="/cart" class="cart-link">&#128722; cart (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>
+                        </div>
+                        <ul class="menu-container">
+                            <li class="menu-item"><a href="/shop">Browse all</a></li>
+                            <li class="menu-item"><a href="/?post_type=product&product_tag=new">New Stuff</a></li>
+                        </ul>
+                        <?php wp_nav_menu( array (
+                                'theme_location' => 'shop-menu',
+                                'container' => '',
+                                'menu_id' => 'product-sidebar-menu',
+                                'menu_class' => 'menu-container',
+                                'fallback_cb' => false
+                        ) ) ?>
+                        <?php wp_nav_menu( array (
+                                'theme_location' => 'shop-bottom-menu',
+                                'container' => '',
+                                'menu_id' => 'shop-bottom-sidebar-menu',
+                                'menu_class' => 'menu-container',
+                                'fallback_cb' => false
+                        ) ) ?>
+                    </div>
+                    <p class="shipping-from">All products are shipped from manila, philippines!</p>
+                <?php endif; ?>
                 <div id="search-form-container">
-                    <?php get_search_form(); ?>
+                    <?php if ($is_woo) {
+                        get_template_part( 'template-parts/forms/search', 'product' );
+                    } else {
+                        get_template_part( 'template-parts/forms/search', 'normal' );
+                    }
+                    ?>                    
                 </div>
+                <?php if ($is_woo): ?>
+                    <a href="/" class="homepage-link">Back to main site!</a>
+                <?php endif; ?>
             </div>
             <!-- <div id="newsletter-header-container" class="newsletter">
                 <?php

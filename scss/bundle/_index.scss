@@ -13,6 +13,11 @@ a {
     color: black;
 }
 
+.reveal .logo {
+    background-color: var(--charcoal);
+    padding-bottom: 10px;
+}
+
 #body-container {
     min-height: 100vh;
     max-width: 100vw;

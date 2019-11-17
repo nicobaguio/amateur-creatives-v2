@@ -37,8 +37,10 @@ if ( function_exists( 'register_nav_menus' ) ) {
 	function ac_nav_menus() {
 		register_nav_menus(
 			array(
-                'header-menu' => 'Header Menu',
-                'footer-menu' => 'Footer Menu'
+                'header-menu' => __('Header Menu'),
+                'footer-menu' => __('Footer Menu'),
+                'shop-menu' => __('Shop Sidebar Menu'),
+                'shop-bottom-menu' => __('Shop Bottom Menu')
             )
         );
 }}
@@ -86,11 +88,10 @@ if (function_exists('register_sidebar') ) {
         register_sidebar( array(
             'name' => 'Shop Advertisements',
             'id' => 'shop-sidebar',
-            'description' => 'Advertisemsents for Shop',
+            'description' => 'Advertisements for Shop',
             'before_widget' => '<div class="shop-advertisement-page">',
             'after_widget' => '</div>'
         ));
-
 }}
 
 // Add ACF fields

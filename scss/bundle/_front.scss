@@ -83,15 +83,15 @@
         border-style: solid;
     }
 
-    @media (orientation: portrait) {
-        #search-form-container {
-            position: absolute;
-            bottom: 0px;
-        }
-    }
+    // @media (orientation: portrait) {
+    //     #search-form-container {
+    //         position: absolute;
+    //         bottom: 0px;
+    //     }
+    // }
 
     #search-form-container {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 
     #search-text {

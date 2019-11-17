@@ -3,10 +3,11 @@
         <div id="prefooter-menu-container">
             <div class="logo"><?php the_custom_logo(); ?></div>
             <?php wp_nav_menu( array (
-                        'menu' => 'footer-menu',
+                        'theme_location' => 'footer-menu',
                         'container_id' => 'menu-footer-container',
                         'container_class' => "menu-container",
-                        'menu_id' => 'footer-menu'
+                        'menu_id' => 'footer-menu',
+                        'fallback_cb' => false
                     ) ) ?>
             <div id="social-media-container">
                 <a href="https://www.instagram.com/pamllaguno">
