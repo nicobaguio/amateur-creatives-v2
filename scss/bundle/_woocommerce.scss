@@ -1013,4 +1013,16 @@
             font-size: 15px;
         }
     }
+
+    .woocommerce-small {
+        #top-container {
+            z-index: 5;
+            background-color: var(--salmon);
+        }
+
+        #shop-sidebar-container {
+            font-size: 16px;
+            margin-top: 50px;
+        }
+    }
 }
